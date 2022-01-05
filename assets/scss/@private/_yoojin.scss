@@ -1,0 +1,350 @@
+// -----------------------------------------------------------------------------
+// private style (kimyoojin
+// -----------------------------------------------------------------------------
+// 모듈 간격
+.title-wrap{
+  &+.form_check_group.type_1{
+    margin-top: 16px;
+  }
+  &+.tbl_info{
+    margin-top: 16px;
+  }
+}
+
+.list-box > .title + .dlist_wrap {
+  .dlist_detail{
+    font-size: toRem(14)
+  }
+}
+.tab-pane > .btn_group_combi:first-child{
+  margin-top: 52px;
+}
+.fixed-bottom .msg_alarm{
+  padding: 0 21px 24px 21px;
+}
+
+// module form
+@mixin f-blind{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  color: transparent;
+}
+legend{
+  @include f-blind()
+}
+.fldset,
+.fldset_round{
+  position: relative;
+  border: 1px solid transparent;
+  .form_wrap+.form_wrap{
+    // margin-top: 32px;
+  }
+}
+.fldset_round{
+  border-color: #e2e5eb;
+  border-radius: 12px;
+  padding: 24px 16px;
+}
+
+.card-type{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  .card-img {
+    flex: 0 0 auto;
+    display: inline-block;
+    border-radius: toRem(3);
+    width:toRem(30);
+    height: toRem(48);
+    box-shadow: none;
+    &:first-child{
+      margin-right: toRem(24);
+      margin-left: 0;
+    }
+    &:last-child{
+      margin-left: toRem(24);
+      margin-right: 0;
+    }
+  }
+  .card-txt {
+    flex: 1;
+    .card-tit {
+      @include font-st(1rem, $black, $weight: $fw-b);
+      @include text-shorten(1);
+    }
+    .card-detail {
+      @include font-st(toRem(14), $gray1, $fw-m);
+      display: flex;
+      font-size: toRem(14);
+      line-height: 1.57;
+      margin-top: 6px;
+      .d-info {
+        @include split-line(toRem(12));
+        display: inline-block;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        margin: 0 0 0 toRem(6);
+        padding-left: toRem(6);
+      }
+    }
+  }
+}
+.card-type.type_multi{
+  .card-img{
+    width: 24px;
+    height: auto;
+    img{
+      box-shadow: 6px 6px 0 #d3d6e3;
+    }
+  }
+}
+
+.list-box{
+  .title{
+    font-size: toRem(16);
+    font-weight: bold;
+  }
+  .dlist_detail{
+    .d_col{
+      margin-top: 17px;
+    }
+    dd{
+      font-size: 14px;
+    }
+  }
+  .btn_group_round{
+    margin-top: 24px;
+  }
+  &.is_disabled{
+    > div{
+      color: #999
+    }
+  }
+}
+
+.banner_app{
+  position: relative;
+  display: block;
+  background: #4d9eee;
+  border-radius: 18px;
+  width: 100%;
+  height: 36px;
+  line-height: toRem(36);
+  padding: 0 24px;
+  font-size: toRem(16);
+  text-overflow: ellipsis;
+  .bnr_txt {
+    color: #fff;
+    font-size: inherit;
+  }
+  .bnr_img{
+    position: absolute;
+    bottom: 0;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+  }
+}
+.MDCmnInfoDotText003 .txt_list.type_dot{
+  margin: 0;
+  > li{
+    color: #111;
+    font-weight: bold;
+  }
+  > li+li{
+    margin-top: toRem(16);
+  }
+}
+.textarea-box {
+  position: relative;
+  overflow: hidden;
+  .textarea {
+    display: block;
+    border: 1px solid $gray4;
+    border-radius: toRem(12);
+    width: 100%;
+    height: 100%;
+    min-height: toRem(200);
+    padding: toRem(16);
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .num-limit {
+    position: absolute;
+    right: toRem(16);
+    bottom: toRem(16);
+    margin: 0;
+    font-size: toRem(13);
+    font-weight: $fw-m;
+    color: #666;
+    span {
+      color: #111;
+    }
+  }
+}
+
+.statement_wrap{
+  .statement_list{
+    border-top: 1px solid #e2e5eb;
+    padding-top: 24px;
+    margin-top: 26px;
+  }
+}
+
+
+
+
+
+.MDCmnDefaultRadio001 .form_check_group.group_1 .item+.item{
+  margin-top: 24px;
+}
+
+
+// form 추가
+.detail_info3{
+  position: relative;
+  width: 100%;
+  font-size: toRem(16);
+  color: #111;
+  .tit{
+    font-size: inherit;
+    font-weight: bold;
+    color: inherit;
+  }
+  .cont_bx{
+    width: 100%;
+  }
+  .info_wrap{
+    width: 100%;
+    margin-top: 7px;
+    font-size: toRem(14);
+    color: #666;
+    dt, dd{
+      font-size: inherit;
+      color: inherit;
+    }
+    dd{
+      margin-top: 5px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  .info_wrap+.info_wrap{
+    margin-top: 24px;
+  }
+}
+
+.form_check_group.type_3{
+  .detail_info3{
+    .info_wrap:first-child:not(:only-child){
+      border-top: 1px solid #e2e5eb;
+      margin-top: 16px;
+      padding-top: 32px;
+    }
+  }
+  .is_disabled .detail_info3{
+    .tit, dt, dd{
+      color: #999
+    }
+  }
+}
+
+
+.accordion.type2{
+  .accordion_item:first-child{
+    border-top: 0 none;
+  }
+  .accordion_item{
+    border-bottom: none;
+  }
+  .accordion_header .list_tit_wrap{
+    position: relative;
+    padding-left: 32px;
+    font-size: 1rem;
+    font-weight: normal;
+    dt{
+      font-size: inherit;
+      color: inherit;
+      font-weight: bold;
+      .ico{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    dd{
+      margin-top: 6px;
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+    .divider::before{
+      content:'';
+      position: relative;
+      background: #e2e5eb;
+      display: inline-block;
+      width: 1px;
+      height: 12px;
+      margin: 0 6px;
+
+    }
+  }
+  .accordion_collapse{
+    padding: 0;
+    border-top: none;
+    .accordion_body{
+      border-top: 1px dashed #e2e5eb;
+      border-bottom: 1px dashed #e2e5eb;
+      padding: 12px 0 24px; 
+    }
+  }
+}
+
+// custom
+.accordion.type2 .list_payment {
+  li+li{
+    margin-top: 12px;
+  }
+  .detail_info2 .tit_wrap {
+    dl{
+      flex-wrap: nowrap;
+    }
+    .tit{
+      @include ellipse(2)
+    }
+  }
+}
+
+.stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 24px;
+  .stamp_txt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .stamp_area {
+    display: flex;
+    margin-top: 28px;
+    justify-content: space-between;
+    align-items: center;
+    .stamp_txt em{
+      display: block;
+    }
+    .stamp_area_img {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      margin-left: 16px;
+    }
+  }
+}

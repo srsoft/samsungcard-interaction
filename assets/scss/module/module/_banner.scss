@@ -1,0 +1,169 @@
+//banner
+.banner_bg{
+  @include bd-radius(toRem(16));
+  margin-top:toRem(24);
+  position: relative;
+  overflow: hidden;
+  height: toRem(360);
+  > a {
+    display: block;
+    // min-height: toRem(360);
+    padding:toRem(32) toRem(24);
+    box-sizing: border-box;
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+  }
+  .bg_area{
+    width:100%;
+    img{
+      width: 100%;
+    }
+  }
+  &.new{
+    > a {
+      .bn_tit{
+        display:block;
+        font-size:toRem(32);
+        line-height: 1.19;
+        color:$white;
+      }
+      [class^="bn_txt"]{
+        display: block;
+        font-size:toRem(14);
+        line-height: 1.57;
+        color:$white;
+      }
+      .bn_txtsub{
+        margin-top:toRem(8);
+      }
+      .bn_txtbottom{
+        position:absolute;
+        bottom:toRem(32);
+        left:toRem(24);
+      }
+      .img_area{
+        position:absolute;
+        bottom:toRem(32);
+        right:toRem(24);
+        width:toRem(58);
+      }
+    }
+  }
+
+  &.brand{
+    > a {
+      .bn_tit{
+        display:block;
+        font-size:toRem(24);
+        color:$black;
+      }
+      [class^="bn_txt"]{
+        display: block;
+        font-size:toRem(14);
+        line-height: 1.57;
+        color:$black;
+      }
+      .bn_txtsub{
+        margin-top:toRem(8);
+      }
+      .img_area{
+        position:absolute;
+        bottom:toRem(26);
+        right:toRem(24);
+      }
+    }
+  }
+
+  &.recomm{
+    background-size: cover;
+    min-height:toRem(356);
+    overflow:hidden;
+    position: relative;
+    > a {
+      width:100%;
+      height:toRem(100);
+      padding:toRem(24);
+      background-color:rgba(0,0,0,0.2);
+      position:absolute;
+      left:0;
+      top:auto;
+      bottom:0;
+      .bn_tit{
+        display:block;
+        font-size:toRem(20);
+        color:$white;
+      }
+      .bn_txtsub{
+        margin-top:toRem(6);
+        display: block;
+        font-size:toRem(14);
+        line-height: 1.57;
+        color:$white;
+      }
+    }
+  }
+}
+
+.banner_normal{
+  @include bd-radius(toRem(16));
+  overflow: hidden;
+  > a {
+    display:block;
+    padding:toRem(32) toRem(24);
+    text-decoration: none;
+    position: relative;
+    background-color: $gray6;
+  }
+  .bn_tit{
+    display:block;
+    font-size:toRem(20);
+    color:$black;
+  }
+  .bn_txtsub{
+    margin-top:toRem(6);
+    display: block;
+    width: toRem(180);
+    font-size:toRem(14);
+    line-height: 1.57;
+    color:$gray2;
+  }
+  .img_area{
+    position:absolute;
+    right:0;
+    top:50%;
+    margin-top:toRem(-60);
+    width:toRem(120);
+    height:toRem(120);
+  }
+
+  &.bg_type{
+    position: relative;
+    height:toRem(160);
+    .bg_area{
+      width:100%;
+      img{
+        width:100%;
+      }
+    }
+    > a {
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background-color: transparent;
+    }
+    .bn_tit{
+      color:$white;
+      line-height: 1.4;
+    }
+    .bn_txtsub{
+      margin-top:toRem(12);
+      color:$white;
+    }
+  }
+}

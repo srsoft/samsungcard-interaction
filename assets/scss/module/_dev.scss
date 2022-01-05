@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// 개발 요청 클래스
+// -----------------------------------------------------------------------------
+
+// 금액의 숫자를 감싸는 클래스 (스타일지정 x)
+.price{}   
+
+// INPUT TIMER
+.timer.end .time-circle {
+  stroke: #e60000;
+}
+.timer .base-circle {
+  stroke: #dcdcdc;
+  stroke-width: 1.5;
+  fill: none;
+}
+.timer .time-circle {
+}
+.setTimer {
+  stroke: #dcdcdc;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  animation-name: timer-ani;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+.timer .time-hand {
+  fill: #2090ff;
+}
+
+.timer.play .time-circle {
+  animation-play-state: running;
+  animation-duration: 1s;
+  stroke: #2090ff;
+}
+.timer.end .time-circle {
+  stroke: #e60000;
+}
+.timer.end .time-hand {
+  fill: #e60000;
+}
+
+@keyframes timer-ani {
+  from {
+    stroke-dashoffset: 60;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

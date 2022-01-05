@@ -1,0 +1,5020 @@
+// -----------------------------------------------------------------------------
+// Bootstrap 일부사용
+// -----------------------------------------------------------------------------
+
+/* text-align class */
+.text-start {
+  text-align: left !important;
+}
+.text-end {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+
+/* grid class */
+.row,
+.row > * {
+  padding: 0;
+  margin: 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  display: flex;
+  flex: 1 0 0%;
+}
+// 210916 고하늘_퍼블 col-12 클래스 추가
+.col-12 {
+  flex: 0 auto;
+  width: 100%;
+}
+
+.d-flex {
+  display: flex !important;
+  // 고하늘_퍼블 추가
+  flex-wrap: wrap;
+  width: 100%;
+}
+.d-grid {
+  display: grid !important;
+}
+[class^='row-cols'] {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+.row-cols-1 > * {
+  width: calc(100% / 1) !important;
+}
+.row-cols-2 > * {
+  width: calc(100% / 2) !important;
+}
+.row-cols-3 > * {
+  width: calc(100% / 3) !important;
+}
+.row-cols-4 > * {
+  width: calc(100% / 4) !important;
+}
+.row-cols-auto > * {
+  flex: 0 0 auto !important;
+  width: auto;
+}
+
+/* module margin top class */
+.mg-1 {
+  margin-top: toRem(6);
+}
+.mg-2 {
+  margin-top: toRem(12);
+}
+.mg-3 {
+  margin-top: toRem(16);
+}
+.mg-4 {
+  margin-top: toRem(24);
+}
+.mg-5 {
+  margin-top: toRem(32);
+}
+.mg-6 {
+  margin-top: toRem(42);
+}
+.mg-7 {
+  margin-top: toRem(52);
+}
+.mg-8 {
+  margin-top: toRem(64);
+}
+
+.g-empty-box {
+  color: $black;
+  font-size: 1rem;
+  font-weight: $fw-r;
+  font-style: normal;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: toRem(90);
+  padding: toRem(16);
+  background-color: #ececec;
+  text-align: center;
+  border-radius: toRem(16);
+}
+
+.float-end {
+  float: right !important;
+}
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+// basic style for copy text
+//
+// example:
+// https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/base/_typography.scss
+
+// font-color
+$fc-primary: $primary;
+$fc-black: $black;
+$fc-darkgray: $gray1;
+$fc-gray: $gray2;
+$fc-white: $white;
+
+%heading {
+  margin: 0;
+  padding: 0;
+  color: $fc-black;
+  font-weight: $fw-b;
+  line-height: $line-height-base;
+  word-break: keep-all;
+}
+.h0 {
+  @extend %heading;
+  font-size: $h0-font-size;
+}
+h1,
+.h1 {
+  @extend %heading;
+  font-size: $h1-font-size;
+}
+h2,
+.h2 {
+  @extend %heading;
+  font-size: $h2-font-size;
+}
+h3,
+.h3 {
+  @extend %heading;
+  font-size: $h3-font-size;
+  line-height: $line-height-lg;
+}
+h4,
+.h4 {
+  @extend %heading;
+  font-size: $h4-font-size;
+}
+h5,
+.h5 {
+  @extend %heading;
+  font-size: $h5-font-size;
+}
+h6,
+.h6 {
+  @extend %heading;
+  font-size: $h6-font-size;
+  font-weight: $fw-b;
+}
+
+%txt-type {
+  color: $fc-black;
+  font-weight: $fw-r;
+  line-height: $line-height-base;
+}
+
+.txt-t1 {
+  @extend %txt-type;
+  font-size: 1rem;
+  font-weight: $fw-b;
+}
+.txt-t2 {
+  @extend %txt-type;
+  font-size: 1rem;
+}
+.txt-t3 {
+  @extend %txt-type;
+  font-size: 0.875rem;
+}
+.txt-t4 {
+  @extend %txt-type;
+  font-size: 0.875rem;
+  line-height: $line-height-lg;
+}
+.txt-t5 {
+  @extend %txt-type;
+  font-size: 0.8125rem;
+}
+.txt-wb {
+  font-weight: $fw-b;
+}
+.txt-wm {
+  font-weight: $fw-m;
+}
+.txt-wr {
+  font-weight: $fw-r;
+}
+%number-type {
+  color: $fc-black;
+  font-family: $font-family-number;
+  font-weight: $fw-b;
+  line-height: $line-height-base;
+  word-break: break-word;
+}
+.number-t1 {
+  @extend %number-type;
+  font-size: 3rem;
+}
+.number-t2 {
+  @extend %number-type;
+  font-size: 2rem;
+}
+.number-t3 {
+  @extend %number-type;
+  font-size: 1rem;
+}
+.number-t4 {
+  @extend %number-type;
+  font-size: 0.875rem;
+  font-weight: $fw-b;
+}
+.price-amount {
+  @extend %number-type;
+  .price {
+    font-size: 1em;
+    font-style: normal;
+  }
+  &.large {
+    .price {
+      font-size: 1.3333em;
+    }
+  }
+  &.xlarge {
+    .price {
+      font-size: 1.75em;
+    }
+  }
+}
+.font-color {
+  color: $blue2;
+}
+
+// -----------------------------------------------------------------------------
+// Functions
+// -----------------------------------------------------------------------------
+
+// Greatest_common_divisor
+@function gcd($a, $b) {
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @if ($b != 0) {
+    @return gcd($b, $a % $b);
+  } @else {
+    @return abs($a);
+  }
+}
+
+// Handles decimal exponents by trying to convert them
+// into a fraction and then use a nthRoot-algorithm for parts of the calculation
+@function pow($base, $exponent, $precision: 12) {
+  @if (floor($exponent) != $exponent) {
+    $prec2 : pow(10, $precision);
+    $exponent: round($exponent * $prec2);
+    $denominator: gcd($exponent, $prec2);
+    @return nthRoot(pow($base, $exponent / $denominator), $prec2 / $denominator, $precision);
+  }
+
+  $value: $base;
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base;
+    }
+  } @else if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base;
+    }
+  }
+
+  @return $value;
+}
+
+// Nth root of number
+@function nthRoot($num, $n: 2, $prec: 12) {
+  // From: http://rosettacode.org/wiki/Nth_root#JavaScript
+  $x: 1;
+
+  @for $i from 0 through $prec {
+    $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)));
+  }
+
+  @return $x;
+}
+
+/// Helper: Remove (strip) Units
+/// @author Bourbon / Thoughbot
+///
+/// @parameter {Value} $value -Value, assumed number with unit
+///
+/// @example  scss - Usage
+///   line-height: strip-unit(1.5em);
+/// @example css - Output
+///   line-height: 1.5;
+@function strip-unit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+/// Return WCAG2.0 relative luminance
+/// Helper: Calculate Luminance of a single color
+/// @author Sérgio Gomes
+/// Adapted from: https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
+///
+/// @require {list} $linear-channel-values (custom)
+/// @require {function} nth (core Sass)
+/// @require {function} red, green, blue (core Sass)
+///
+/// @param {Valid Color Value} Color to retreive luminance from
+///
+/// Note: White luminance is 1, Black luminance is 0
+///
+/// Note: To be used in other functions or mixins — creates non-standard CSS output:
+/// @example scss - Usage
+///    .sample { luminance: luminanceOf(#c00); }
+///
+/// @example css - Output
+///    .sample { luminance: 12.83679; }
+///
+@function luminanceOf($color) {
+  // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+  // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+  $rgba: red($color), green($color), blue($color);
+  $rgba2: ();
+
+  @for $i from 1 through 3 {
+    $rgb: nth($rgba, $i);
+    $rgb: $rgb / 255;
+
+    $rgb: if($rgb < 0.03928, $rgb / 12.92, pow(($rgb + 0.055) / 1.055, 2.4));
+
+    $rgba2: append($rgba2, $rgb);
+  }
+
+  @return 0.2126 * nth($rgba2, 1) + 0.7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
+}
+
+/// Helper: Calculate "readability" as defined by WCAG 2.1
+/// @author Sérgio Gomes and J. Hogue
+/// Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+///
+/// @require {function} luminance (Custom)
+/// @require {function} round (core Sass)
+///
+/// @param {Valid Color Value} Color 1
+/// @param {Valid Color Value} Color 2
+///
+/// Note: Low contrast is 0, High contrast is 21.0
+///
+/// Note: To be used in other functions or mixins — creates non-standard CSS output:
+/// @example scss - Usage
+///    .sample { contrast-ratio: contrast-ratio(#c00, #fff); }
+///
+/// @example css - Output
+///    .sample { contrast-ratio: 5.89; }
+///
+@function contrast-ratio($fg, $bg) {
+  $luminance1: luminanceOf($fg) + 0.05;
+  $luminance2: luminanceOf($bg) + 0.05;
+  $ratio: $luminance1 / $luminance2;
+  @if $luminance2 > $luminance1 {
+    $ratio: 1 / $ratio;
+  }
+  // Round to a hundreth because 6.96 should not pass a ratio of 7.0
+  $ratio: round($ratio * 100) / 100;
+  @return $ratio;
+}
+
+/// Helper: Depending on the unit recalculate a font size value into unitless pixels
+/// @author J. Hogue
+///
+/// @require {function} unit (core Sass)
+/// @require {function} strip-unit (custom)
+///
+/// @param {String} Number with or without unit
+///
+/// Note: To be used in other functions or mixins — creates non-standard CSS output:
+/// @example scss - Usage
+///    .sample { validate-font-size: validate-font-size(1em); }
+///
+/// @example css - Output
+///    .sample { validate-font-size: 16; }
+///
+@function validate-font-size($size) {
+  // If it is already unitless, quickly return it
+  @if unit($size) == '' {
+    @return $size;
+  } @else if unit($size) == 'px' {
+    // We expect PX, so strip the value and return it
+    @return strip-unit($size);
+  } @else if unit($size) == 'em' or unit($size) == 'rem' {
+    // Need to convert to a pixel value. Let's not overcomplicate it with possible EM inheritence scale factors
+    @return strip-unit($size * 16);
+  } @else {
+    // Did our best. If an unexpected unit was supplied, let people know
+    @error 'validate-font-size(): An unexpected font-size unit was supplied. PX, EM, or REM supported.';
+  }
+}
+
+/// Helper: Determine the correct ratio value to use based on font-size and WCAG Level
+/// @author J. Hogue
+///
+/// @require {function} validate-font-size (custom)
+///
+/// @param {String} Level. 'AA' or 'AAA' expected, 'AA' default
+/// @param {Number} Font size in unitless px expected, 16 default
+/// @param {Boolean} Whether or not the fontis bold, false default
+///
+/// Note: To be used in other functions or mixins — creates non-standard CSS output:
+/// @example scss - Usage
+///    .sample { get-ratio: get-ratio('AAA', 19, true); }
+///
+/// @example css - Output
+///    .sample { get-ratio: 4.5; }
+///
+@function get-ratio($level: 'AAA', $size: 16, $bold: false) {
+  // Default ratios
+  $ratio: 4.5;
+  @if $level == 'AAA' {
+    $ratio: 7;
+  }
+
+  // Make sure the size is valid
+  $size: validate-font-size($size);
+
+  // Check font size
+  @if $size < 24 {
+    // Small text, use defaults
+    // But:
+    @if $size >= 19 and $bold == true {
+      // Special case: small text but also bold
+      @if $level == 'AAA' {
+        $ratio: 4.5;
+      } @else {
+        $ratio: 3;
+      }
+    }
+  } @else {
+    // 24 or larger
+    $ratio: 3;
+    @if $level == 'AAA' {
+      $ratio: 4.5;
+    }
+  }
+  @return $ratio;
+}
+
+/// Helper: Use contrast against white or black to determine if a color is "light" or "dark"
+/// @author Sérgio Gomes and J. Hogue
+/// Adapted from: https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
+///
+/// @require {function} contrast-ratio (custom)
+///
+/// @param {String} {Valid Color Value} Color
+///
+/// Note: To be used in other functions or mixins — creates non-standard CSS output:
+/// @example scss - Usage
+///    .sample { light-or-dark: light-or-dark(#c00); }
+///
+/// @example css - Output
+///    .sample { light-or-dark: "light"; }
+///
+@function light-or-dark($color) {
+  // Check how the color performs against white and black
+  $light-contrast: contrast-ratio($color, white);
+  $dark-contrast: contrast-ratio($color, black);
+
+  @if $light-contrast > $dark-contrast {
+    // Contrast against white is higher than against black, so, this is a dark color
+    @return 'dark';
+  } @else {
+    @return 'light';
+  }
+}
+
+/// Also useful: Given one color, which is most readable with it, black or white?
+/// @author Sérgio Gomes and J. Hogue
+///
+/// @require {function} light-or-dark (custom)
+///
+/// @param {String} {Valid Color Value} Color
+///
+/// @example scss - Usage
+///     .sample {
+///       background-color: #c00;
+///       color: high-contrast-color(#c00);
+///     }
+///
+/// @example css - Output
+///     .sample {
+///       background-color: #c00;
+///       color: #fff;
+///     }
+///
+@function high-contrast-color($color) {
+  $color-lod: light-or-dark($color);
+
+  @if ($color-lod == 'dark') {
+    @return white;
+  } @else {
+    @return black;
+  }
+}
+
+/// Return a color that passes for the chosen WCAG level without changing the Hue of the color
+/// @author A. Hosseini, J. Hogue
+///
+/// @require {function} validate-font-size (custom)
+/// @require {function} get-ratio (custom)
+/// @require {function} contrast-ratio (custom)
+/// @require {function} light-or-dark (custom)
+/// @require {function} scale-color (core Sass)
+///
+/// @param {String} {Valid Color Value} Color 1
+/// @param {String} {Valid Color Value} Color 2
+/// @param {String} Level. 'AA' or 'AAA' expected, 'AA' default
+/// @param {Number} Font size in unitless px expected, 16 default
+/// @param {Boolean} Whether or not the fontis bold, false default
+///
+/// @example scss - Usage
+///     .sample {
+///       background-color: #000;
+///       color: a11y-color(#c0c, #000);
+///     }
+///
+/// @example css - Output
+///     .sample {
+///       background-color: #000;
+///       color: #d200d2;
+///     }
+///
+@function a11y-color($foreground, $background, $level: 'AA', $size: 16, $bold: false) {
+  // Helper: make sure the font size value is acceptable
+  $font-size: validate-font-size($size);
+  // $threshold: 4.5; // 4.5 = WCAG AA,7= WCAG AAA
+  // $threshold: 5.0;
+  // Helper: With the level, font size, and bold boolean, return the proper target ratio. 3.0, 4.5, or 7.0 expected
+  $threshold: get-ratio($level, $font-size, $bold);
+  $percent: 0;
+  @while $percent < 100 {
+    $lighter: lighten($foreground, $percent);
+    $darker: darken($foreground, $percent);
+    $darker-ratio: contrast-ratio($background, $darker);
+    $lighter-ratio: contrast-ratio($background, $lighter);
+
+    @if ($darker-ratio > $lighter-ratio) {
+      @if ($darker-ratio > $threshold) {
+        @return $darker;
+      }
+    }
+    @if ($lighter-ratio > $darker-ratio) {
+      @if ($lighter-ratio > $threshold) {
+        @return $lighter;
+      }
+    }
+    $percent: $percent + 2;
+  }
+  // Couldn't find an answer
+  @return if(lightness($foreground) < 51, #000, #fff);
+}
+
+/// Converts hex to rgb form
+/// @param {String} {Valid Color Value}
+/// @param {Boolean} {Value in rgb() function or values only} 2
+@function toRGB($color, $value: false) {
+  $rgb: red($color) + ', ' + green($color) + ', ' + blue($color);
+  @if $value {
+    @return $rgb;
+  }
+  @return 'rgb(' + $rgb + ')';
+}
+// -----------------------------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------------------------
+/* Buttons - Custom style
+-------------------------*/
+
+
+/*
+// Font Style
+// Usage ------------------
+// @include font-st(1rem,$black,$fw-m,normal);
+-------------------------*/
+@mixin font-st($size: 1rem, $color: $black, $weight: $fw-m, $style: normal) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+/*
+// Split Line
+// Usage ------------------
+// @include split-line(0.875rem, $gray5);
+// @include split-line(0.875rem, $gray5, right);
+-------------------------*/
+@mixin split-line($height: 0.875rem, $color: $gray5, $direction: left) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    height: $height;
+    background-color: $color;
+    transform: translateY(-50%);
+  }
+
+  @if $direction == left {
+    &::before {
+      left: -1px;
+    }
+  } @else if $direction == right {
+    &::before {
+      right: -1px;
+    }
+  }
+}
+/*
+// Form Input Focus
+// Usage ------------------
+// @include form-focus-ani($black);
+-------------------------*/
+// 삭제예정
+@mixin form-focus-ani($color: $black) {
+  position: relative;
+  &:focus::after,
+  &:focus-within::after {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    bottom: toRem(-2);
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $color;
+    animation: input-line 0.5s forwards ease-in-out;
+  }
+}
+// 삭제예정
+@mixin form-focus-ani-none($color: $black) {
+  &:focus::after,
+  &:focus-within::after {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    bottom: toRem(-2);
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $color;
+    animation: none;
+  }
+}
+
+/*
+// Focus Label Style
+// Usage ------------------
+// @include ckd-label($blue2, transparent, $primary, 1px);
+-------------------------*/
+@mixin ckd-label($f-color: $blue2, $bg-color: transparent, $br-color: $primary, $width: 1px) {
+  .form-check-input:checked + .form-check-label,
+  .cont-selected {
+    color: $f-color;
+    background-color: $bg-color;
+    border: $width solid $br-color;
+    .tit {
+      @include font-st(1rem, $black, $fw-b, normal);
+    }
+  }
+}
+
+/*
+// Small Card Image
+// Usage ------------------
+// @include small-card-img(true, toRem(30), toRem(48));
+-------------------------*/
+@mixin small-card-img($shadow: true, $w: toRem(30), $h: toRem(48)) {
+  border-radius: toRem(3);
+  @if ($shadow) {
+    box-shadow: 0.1875rem 0.1875rem 0.1875rem rgba(00, 00, 00, 0.3);
+  } @else {
+    box-shadow: none;
+  }
+  display: inline-block;
+  width: $w;
+  height: $h;
+}
+
+/* Clearfix
+// Author: Chanhee Hwang
+-------------------------*/
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* check-blind
+// Author: 
+-------------------------*/
+@mixin check-blind() {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+/* d-flex-center
+// Author: 
+-------------------------*/
+@mixin d-flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background image - cover
+// Author: Chanhee Hwang
+-------------------------*/
+@mixin cover-background($image-src) {
+  background-image: url($image-src);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fixed position
+-------------------------*/
+// 삭제
+@mixin fixed-top() {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+// 삭제
+@mixin fixed-bottom() {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+}
+// 삭제
+@mixin sticky-top() {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+
+@mixin text-shorten($numLines: 1) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @supports (-webkit-line-clamp: $numLines) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin bd-radius($radii, $dr: false) {
+  border-radius: 0;
+  @if $dr == top {
+    border-top-left-radius: $radii;
+    border-top-right-radius: $radii;
+  } @else if $dr == right {
+    border-top-right-radius: $radii;
+    border-bottom-right-radius: $radii;
+  } @else if $dr == bottom {
+    border-bottom-left-radius: $radii;
+    border-bottom-right-radius: $radii;
+  } @else if $dr == left {
+    border-top-left-radius: $radii;
+    border-bottom-left-radius: $radii;
+  } @else {
+    border-radius: $radii;
+  }
+}
+@mixin ico-size($size: 20) {
+  width: toRem($size);
+  height: toRem($size);
+}
+
+
+/* Buttons - Custom style
+-------------------------*/
+@mixin style-button-contained() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  color: $black;
+  background-color: $gray6;
+  border: 1px solid transparent;
+  border-radius: $btn-radius;
+}
+
+@mixin style-button-round-gray() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  color: $black;
+  background-color: $gray6;
+  border: 1px solid transparent;
+  border-radius: $btn-radius;
+}
+
+@mixin style-button-round-blue() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  color: $white;
+  background-color: $primary;
+  border: 1px solid transparent;
+  border-radius: $btn-radius;
+}
+
+@mixin style-button-round-outline() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  color: $black;
+  background-color: $white;
+  border: 1px solid $gray5;
+  border-radius: $btn-radius;
+}
+
+@mixin style-button-outline() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  color: $black;
+  background-color: transparent;
+  border: 1px solid $gray5;
+  border-radius: $btn-radius;
+}
+
+@mixin style-button-outline-select() {
+  @extend %btn-default;
+  @extend %btn-font-style4;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+  // align-items: flex-start;
+  // flex-direction: column;
+  color: $black;
+  border: 1px solid $gray5;
+  border-radius: $btn-radius-lg;
+}
+
+@mixin style-button-outline-select-sm() {
+  //justify-content: left;
+  align-items: center;
+  color: $black;
+  border: 1px solid $gray5;
+  border-radius: $btn-radius;
+}
+
+// -----------------------------------------------------------------------------
+// layout
+// -----------------------------------------------------------------------------
+
+
+// .mdl-wrap {
+.mdl-head + .mdl-body {
+  margin-top: toRem(32);
+}
+// }
+
+.heading {
+  margin-top: toRem(24);
+  .title {
+    @extend %heading;
+    font-size: $h3-font-size;
+    line-height: $line-height-lg;
+  }
+  .sub_text {
+    @include font-st(0.875rem, $gray2, $fw-r, normal);
+    line-height: $line-height-lg;
+    margin-top: toRem(16);
+  }
+  // Sub titles
+  .stt {
+    margin-top: toRem(24);
+  }
+}
+
+.page-title {
+  width: 100%;
+  position: relative;
+  .title {
+    @extend %heading;
+    font-size: $h3-font-size;
+    line-height: $line-height-lg;
+  }
+  .sub_text {
+    @include font-st(0.875rem, $gray2, $fw-r, normal);
+    line-height: $line-height-lg;
+    margin-top: toRem(16);
+  }
+}
+
+section.selection {
+  & > div {
+    padding-top: toRem(24);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// component
+// -----------------------------------------------------------------------------// -----------------------------------------------------------------------------
+// Button component
+// -----------------------------------------------------------------------------
+%btn-default {
+  display: inline-block;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+}
+%btn-font-style1 {
+  font-size: $fs-lg !important;
+  font-weight: $fw-b !important;
+}
+%btn-font-style2 {
+  font-size: $fs-lg !important;
+  font-weight: $fw-m !important;
+}
+%btn-font-style3 {
+  font-size: $fs-md !important;
+  font-weight: $fw-b !important;
+}
+%btn-font-style4 {
+  font-size: $fs-md !important;
+  font-weight: $fw-m !important;
+}
+%btn-font-style4-r {
+  font-size: $fs-md !important;
+  font-weight: $fw-r !important;
+}
+%btn-font-style5 {
+  font-size: $fs-sm !important;
+  font-weight: $fw-b !important;
+}
+%btn-font-style6 {
+  font-size: $fs-sm !important;
+  font-weight: $fw-r !important;
+}
+%btn-link-style {
+  border: none;
+  padding: 0;
+  border-radius: $btn-radius-none !important;
+}
+
+/* Btn reset */
+.btn {
+  display: inline-block;
+  font-family: $font-family-base;
+  font-size: 1rem;
+  font-weight: $fw-m;
+  line-height: $line-height-base;
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: $btn-radius;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+/* Button - Inline */
+.d-grid > .btn {
+  min-height: toRem(42);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  .ico {
+    flex: 0 0 auto;
+  }
+}
+.btn-primary {
+  color: $white;
+  border: none;
+  border-radius: $btn-radius-none;
+  background-color: #2090ff;
+  border-color: #2090ff;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $white;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray8;
+  }
+  @media (hover: hover) {
+    a:hover {
+      //
+    }
+  }
+}
+.btn-secondary {
+  color: $black;
+  background-color: $gray6;
+  border: none;
+  border-radius: $btn-radius-none;
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray8;
+  }
+}
+.btn-round-gray {
+  @include style-button-round-gray();
+  height: toRem(36);
+  padding: toRem(9) toRem(9);
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray6;
+  }
+}
+.btn-round-blue {
+  @include style-button-round-blue();
+  height: toRem(36);
+  padding: toRem(9) toRem(9);
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray8;
+  }
+}
+.btn-round-blue2 {
+  color: #0080ff;
+  background-color: #e5efff;
+  font-size: toRem(14);
+  font-weight: 500;
+  height: toRem(36);
+  padding: toRem(9) toRem(9);
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray8;
+  }
+  &:hover {
+    color: #0080ff;
+  }
+}
+.btn-round-outline {
+  @include style-button-round-outline();
+  height: toRem(36);
+  padding: toRem(9) toRem(9);
+  &:disabled,
+  &.disabled {
+    // 211013 고하늘 퍼블 추가 수정
+    color: $gray3;
+    background-color: $gray7;
+    border-color: $gray7;
+    .inner-text .tit {
+      color: $gray3;
+      font-weight: $fw-r;
+    }
+    .ico {
+      opacity: 0.5;
+    }
+  }
+}
+.btn-outline {
+  @include style-button-outline();
+  &:disabled,
+  &.disabled {
+    color: $gray5;
+    border-color: $gray5;
+  }
+}
+.btn-outline-sm {
+  @extend %btn-font-style6;
+  height: toRem(24);
+  padding: toRem(2.875) toRem(12);
+  color: $gray2;
+  border-color: $gray5;
+  border-radius: $btn-radius-sm;
+  &:disabled,
+  &.disabled {
+    border-color: $gray8;
+    background: $gray8;
+    color: $gray3;
+  }
+}
+.btn-round-sm {
+  @extend %btn-font-style6;
+  height: toRem(28);
+  padding: toRem(5) toRem(9);
+  color: $white;
+  background: $c-sub2;
+  border-color: $c-sub2;
+  border-radius: $btn-radius-sm;
+  &:disabled,
+  &.disabled {
+    border-color: $gray8;
+    background: $gray8;
+    color: $gray3;
+  }
+}
+.btn-blue-sm {
+  @extend %btn-font-style6;
+  height: toRem(28);
+  padding: toRem(5) toRem(9);
+  color: $white;
+  background: $primary;
+  border-color: $primary;
+  border-radius: $btn-radius-sm;
+  &:disabled,
+  &.disabled {
+    border-color: $gray8;
+    background: $gray8;
+    color: $gray3;
+  }
+}
+.btn-text-sm {
+  @extend %btn-font-style4-r;
+  color: $gray2;
+  border: none;
+  padding: 0;
+  border-radius: $btn-radius-none;
+  .ico {
+    margin-left: toRem(4);
+    background-color: $gray2;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray4;
+    .ico {
+      background-color: $gray4;
+    }
+  }
+}
+.btn-text-md {
+  @extend %btn-font-style2;
+  color: $black;
+  border: none;
+  padding: 0;
+  border-radius: $btn-radius-none;
+  .ico {
+    width: 20px;
+    height: 20px;
+    margin-left: toRem(6);
+    background-color: $black;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray4;
+    .ico {
+      background-color: $gray4;
+    }
+  }
+}
+.btn-text-lg {
+  @extend %btn-font-style2;
+  color: $black;
+  border: none;
+  padding: 0;
+  border-radius: $btn-radius-none;
+  .ico {
+    width: 20px;
+    height: 20px;
+    margin-left: toRem(6);
+    background-color: $black;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray4;
+    .ico {
+      background-color: $gray4;
+    }
+  }
+}
+.btn-link {
+  @extend %btn-link-style;
+  text-decoration: underline;
+}
+.btn-link-sm {
+  @extend %btn-font-style6;
+  @extend %btn-link-style;
+  color: $primary;
+  text-decoration: underline;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $blue3;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray4;
+    .ico {
+      background-color: $gray4;
+    }
+  }
+}
+.btn-icon {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background: transparent;
+  line-height: 0;
+}
+
+/* Button - mix case */
+.btn-full-md {
+  > .btn {
+    min-height: toRem(52);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.btn-full-lg {
+  &.center {
+    .btn {
+      align-items: center;
+    }
+  }
+  > .btn {
+    box-sizing: border-box;
+    min-height: toRem(68);
+    padding: toRem(22) toRem(16);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: toRem(12);
+  }
+  & + & {
+    margin-top: toRem(12);
+  }
+  // 고하늘_퍼블 추가
+  &.disabled {
+    .inner-text span,
+    .amount-dl dt,
+    .amount-dl dd,
+    .amount-dl span {
+      color: $gray3;
+    }
+    .ico {
+      background-color: $gray2;
+    }
+  }
+}
+.btn-list-more {
+  .text {
+    margin-right: toRem(4);
+  }
+  .numb {
+    em {
+      @include font-st(0.875rem, $gray1, $fw-r, normal);
+    }
+    em.on {
+      color: $black;
+      &::after {
+        content: '/';
+      }
+    }
+  }
+  .ico {
+    margin-left: toRem(6);
+  }
+  .btn-contained {
+    border-radius: $btn-radius-lg;
+  }
+}
+.btn-combi-custom1 {
+  .btn-contained:disabled,
+  .btn-contained.disabled {
+    opacity: 1;
+    .btn-round-sm {
+      border-color: $gray8;
+      background-color: $gray8;
+      color: $gray3;
+    }
+  }
+}
+// .btn-combi-custom2 {
+//   .inner-text .tit {
+//     font-weight: $fw-r;
+//   }
+// }
+.dropdown-custom1 {
+  .inner-text .tit {
+    font-size: $fs-md;
+    font-weight: $fw-m;
+  }
+  .inner-card-select {
+    padding-top: toRem(6);
+    padding-bottom: toRem(6);
+  }
+  .btn-contained {
+    border-radius: $btn-radius-lg;
+    min-height: toRem(52);
+    padding-top: toRem(15);
+    padding-bottom: toRem(15);
+  }
+}
+
+/* Button - Group */
+// .btn-group-cta {
+//   .btn {
+//     @extend %btn-font-style1;
+//     min-height: 60px;
+//     margin: 0;
+//     border-radius: $btn-radius-none;
+//   }
+// }
+.btn-group-round {
+  .btn-round-blue,
+  .btn-round-gray,
+  .btn-round-outline {
+    min-height: toRem(42);
+    border-radius: $btn-radius-lg;
+  }
+  .row {
+    margin: toRem(-2);
+    & > * {
+      margin: toRem(2);
+    }
+    & + .row {
+      margin-top: toRem(4);
+    }
+  }
+}
+.btn-group-outline {
+  .btn {
+    min-height: toRem(42);
+  }
+  .row {
+    margin: toRem(-2);
+    & > * {
+      margin: toRem(2);
+    }
+    & + .row {
+      margin-top: toRem(4);
+    }
+  }
+}
+
+/* Banner */
+.bnr {
+  position: relative;
+  &.bnr-nudge {
+    .custom-area {
+      display: flex;
+      align-items: center;
+      @extend %btn-font-style2;
+      height: toRem(36);
+      color: $white;
+      padding: 0 toRem(24);
+      border-radius: toRem(18);
+      background-color: #4d9eee;
+    }
+  }
+  &.cardb_slide {
+    margin-top: toRem(16);
+    width: toRem(153);
+    border-radius: toRem(12);
+    background-color: $gray6;
+    a {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: toRem(24) toRem(16) toRem(24) toRem(16);
+      text-decoration: none;
+    }
+    .cardb_head {
+      .ico{
+        width: toRem(24);
+        height: toRem(24);
+        background-color: transparent;
+      }
+    }
+    .cardb_body {
+      .cardb_tit {
+        margin-bottom: 0;
+        margin-top: toRem(12);
+        color: $black;
+        font-weight: $fw-b;
+        line-height: $line-height-lg;
+      }
+      .cardb_sub {
+        margin-bottom: 0;
+        margin-top: toRem(8);
+        font-size: toRem(14);
+        color: $gray2;
+        font-weight: $fw-r;
+        line-height: 1.57;
+        letter-spacing: -0.5; //임시
+      }
+    }
+  }
+}
+
+// 삭제예정 아님
+.btn-contained {
+  @include style-button-contained();
+  &:disabled,
+  &.disabled {
+    color: $gray3;
+    background-color: $gray6;
+  }
+}
+.btn-group-contained {
+  .btn {
+    min-height: toRem(42);
+  }
+  .row {
+    & + .row {
+      margin-top: toRem(8);
+    }
+  }
+}
+
+.up-method {
+  color: #2090ff;
+}
+
+// -----------------------------------------------------------------------------
+// Tab component
+// -----------------------------------------------------------------------------
+/* Tab */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  &.flex-nowrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .nav-link {
+    @extend %btn-font-style4;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+  }
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    @extend %btn-font-style3;
+  }
+}
+// nav tabs
+.nav-tabs {
+  min-height: 48px;
+  margin-left: toRem(-21);
+  margin-right: toRem(-21);
+  padding-bottom: 1px;
+  border-bottom: 1px solid $gray5;
+  align-items: center;
+  .nav-link {
+    display: block;
+    margin-bottom: -1px;
+    padding-top: 0.9375rem;
+    padding-bottom: 0.9375rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+  }
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-bottom: 2px solid $black;
+  }
+  &.custom-t1 .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+  &.custom-t1 .nav-link {
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+  }
+  & > li:first-child,
+  & > a:first-child {
+    margin-left: 21px;
+  }
+  & > li:last-child,
+  & > a:last-child {
+    margin-right: 21px;
+  }
+}
+// nav bubble
+.nav-bubble {
+  .nav-item {
+    min-height: toRem(36);
+    margin-right: toRem(8);
+    margin-bottom: toRem(12);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $gray5;
+    border-radius: toRem(22);
+    &.active {
+      @include font-st($fs-md, $white, $fw-r);
+      background-color: $black;
+      border-color: $black;
+    }
+    > span {
+      padding: toRem(9) toRem(16);
+      @include text-shorten(1);
+    }
+    > i {
+      margin-left: toRem(-10);
+      margin-right: toRem(4);
+    }
+  }
+}
+// nav - pills
+.nav-pills {
+  .nav-link {
+    height: 42px;
+    padding: 0.8rem 0.75rem;
+    background: none;
+    border: 0;
+    border-radius: 1.5rem;
+    background-color: $gray6;
+    color: $black;
+  }
+  &.row {
+    //gap: toRem(12);
+  }
+}
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+    &.active {
+      display: block;
+    }
+    div {
+      &.inner-line {
+        position: relative;
+        padding-top: toRem(56);
+        margin-top: toRem(56);
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          width: calc(100% + 5.625rem);
+          margin-left: -2.8125rem;
+          height: 0.375rem;
+          background-color: #f4f6fb;
+        }
+      }
+    }
+  }
+}// -----------------------------------------------------------------------------
+// Form component
+// -----------------------------------------------------------------------------
+%form-control-style {
+  padding: 0;
+  height: toRem(50);
+  border-radius: 0;
+  border: 0;
+  font-family: $font-family-number;
+  font-size: toRem(20);
+  font-weight: $fw-b;
+  line-height: 1.25;
+}
+%cover-btn-style {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Input - common */
+
+.form-textarea {
+  width: 100%;
+  min-height: toRem(200);
+  padding: toRem(16) toRem(16) toRem(48);
+  border: 1px solid $gray4;
+  border-radius: toRem(12) !important;
+  font-size: toRem(16);
+  &:focus,
+  &:active,
+  &.active {
+    border: 2px solid $primary;
+  }
+}
+.form-colbox {
+  & > .col {
+    position: relative;
+    height: toRem(52);
+    box-sizing: border-box;
+    border-bottom: 2px solid $gray4;
+    align-items: flex-end;
+  }
+  .form-control {
+    display: flex;
+    flex-grow: 1;
+    &:disabled + .ipt-unit {
+      color: $gray4;
+    }
+    &:disabled + .ipt-full-btn .ico {
+      background-color: $gray4;
+    }
+    &[type='button'],
+    &[type='submit'] {
+      align-items: center;
+      justify-content: space-between;
+      .ipt-value {
+        display: inline-flex;
+        .ico {
+          margin-right: toRem(8);
+        }
+      }
+      .ipt-value.placeholder {
+        color: $gray4;
+      }
+    }
+    &::placeholder {
+      color: $gray4;
+    }
+  }
+  .btn-round-sm {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: toRem(12);
+    margin-left: toRem(12);
+  }
+  .btn-icon {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: toRem(16);
+    margin-left: toRem(16);
+  }
+  .ipt-timer {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: toRem(16);
+    margin-left: toRem(12);
+    color: $primary;
+    em {
+      margin-right: toRem(4);
+      @include font-st(toRem(13), $blue, $fw-b, normal);
+    }
+    &.done {
+      color: $red;
+    }
+  }
+  .ipt-unit {
+    @include font-st(toRem(16), $black, $fw-b, normal);
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: toRem(16);
+    margin-left: toRem(12);
+  }
+  .ipt-pass-result {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: toRem(16);
+    margin-left: toRem(12);
+  }
+  // 211014 고하늘 퍼블 추가
+  .ipt-cvc {
+    margin-bottom: toRem(7);
+    margin-left: toRem(12);
+  }
+}
+
+/* Input - Text */
+.form-wrap-iptext {
+  .form-colbox {
+    margin: toRem(-8);
+    & > .col {
+      @include form-focus-ani();
+      margin: toRem(8);
+    }
+  }
+}
+
+/* Input - Button */
+.form-wrap-ipbutton {
+  .form-colbox {
+    margin: toRem(-8);
+    & > .col {
+      margin: toRem(8);
+    }
+  }
+  .form-control:read-only,
+  .form-control[readonly] {
+    color: $black;
+  }
+}
+
+/* Input - tel number */
+.form-wrap-iptel {
+  .form-colbox {
+    margin: toRem(-6);
+    & > .col {
+      margin: toRem(6);
+    }
+    .col:nth-child(1) {
+      width: 30%;
+      flex: 0 0 auto;
+    }
+    .col:nth-child(2) {
+      @include form-focus-ani($black);
+    }
+  }
+}
+
+/* Input - TextArea */
+.form-iptextarea {
+  .form-control {
+    //
+  }
+}
+
+/* Input - Select */
+.form-ipselect {
+  .form-control {
+    border-bottom: none;
+    color: $black;
+  }
+  .fix-r {
+    width: 100%;
+    .btn-icon,
+    .btn {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 2px solid $gray4;
+      &:focus {
+        outline: none;
+        // border-color: $black;
+      }
+    }
+  }
+}
+
+/* Input - Combo */
+.form-combobox {
+  position: relative;
+  //overflow-x: hidden;
+  select {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 2;
+  }
+  border: 1px solid $gray4;
+  border-radius: toRem(12);
+  .btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: toRem(8) toRem(56) toRem(8) toRem(16);
+    background-color: transparent;
+    font-size: toRem(14);
+    font-weight: $fw-m;
+    &:focus {
+      outline: 1px solid $black;
+    }
+  }
+  & > .btn {
+    padding: toRem(16) toRem(12) toRem(16) toRem(16);
+  }
+  .combo-item-list {
+    display: none;
+    padding: 0;
+    margin-bottom: 0;
+    li {
+      list-style: none;
+    }
+    .btn[aria-selected='true'] {
+      color: $primary;
+    }
+  }
+
+  &.active {
+    border: 2px solid $blue1;
+    border-radius: toRem(12);
+    & > .btn {
+      padding-bottom: toRem(8);
+      .ico {
+        transform: rotate(-180deg);
+      }
+    }
+    .combo-item-list {
+      display: block;
+      li:last-child > .btn {
+        padding-bottom: toRem(16);
+      }
+    }
+  }
+}
+
+/* Input - Search */
+.custom-search {
+  .form-colbox {
+    margin: 0;
+    height: toRem(52);
+    border: 2px solid $gray4;
+    border-radius: toRem(10);
+    overflow: hidden;
+    & > .col {
+      margin: 0;
+      border: none;
+    }
+    &:focus,
+    &:focus-within {
+      border-color: $black;
+    }
+    .form-control {
+      // height: toRem(48);
+      height: 100%;
+      padding: 0 toRem(16);
+      font-size: toRem(16);
+      font-weight: $fw-b;
+    }
+    .btn-icon {
+      margin: 0;
+      padding: toRem(16);
+    }
+    .form-control::placeholder {
+      color: #dcdcdc;
+    }
+  }
+}
+// .custom-search .form-control {
+//   .btn-icon {
+//     width: toRem(48);
+//     height: toRem(46);
+//     border: none;
+//     justify-content: center;
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       top: 0;
+//       bottom: 0;
+//     }
+//     &:focus {
+//       outline: 0;
+//       box-shadow: 0 0 0 0.1rem rgba(var(--primary-color-rgb), 0.25);
+//     }
+//   }
+// }
+
+/* Input - status */
+.ip-error {
+  .ipt-unit,
+  .form-control,
+  .form-text,
+  .form-text > .dot-list > li {
+    color: $red !important;
+  }
+  .form-text > .dot-list li::before {
+    background-color: $red !important;
+  }
+  .form-colbox > .col {
+    @include form-focus-ani-none($red);
+    border-color: $red !important;
+    animation: none;
+  }
+}
+.ip-pass {
+  .ipt-unit,
+  .form-control,
+  .form-text,
+  .form-text > .dot-list > li {
+    color: $primary !important;
+  }
+  .form-text > .dot-list li::before {
+    background-color: $primary !important;
+  }
+  .form-colbox > .col {
+    @include form-focus-ani-none($primary);
+    border-color: $primary !important;
+    animation: none;
+  }
+}
+.ip-disabled {
+  .ipt-unit,
+  .form-label,
+  .form-text,
+  .form-text > .dot-list > li {
+    color: $gray4 !important;
+  }
+  .form-text > .dot-list li::before {
+    background-color: $gray4 !important;
+  }
+  .form-colbox > .col {
+    @include form-focus-ani-none($gray4);
+    border-color: $gray4 !important;
+    animation: none;
+  }
+}
+// -----------------------------------------------------------------------------
+// badge
+// -----------------------------------------------------------------------------
+
+// .badge.rounded-pill {
+//   min-width: 37px;
+//   padding: toRem(5) toRem(8);
+//   font-size: toRem(12);
+//   font-weight: $fw-r;
+//   font-style: normal;
+// }
+
+// 부트스트랩 제거 후 수정 - flag
+.badge {
+  display: inline-block;
+  padding: toRem(5) toRem(8);
+  font-size: toRem(12);
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  &.rounded-pill {
+    min-width: toRem(37);
+    font-weight: $fw-r;
+    font-style: normal;
+  }
+}
+.rounded-pill {
+  border-radius: toRem(28);
+}
+.bg-primary {
+  background-color: $blue;
+}
+.bg-secondary {
+  background-color: $gray3;
+}
+.bg-red {
+  background-color: $red1;
+}
+.bg-green {
+  background-color: $green;
+}
+
+/*------------ ul, ol, dl list ----------*/
+// 조건별 가격 item
+.amount-dl {
+  font-size: $fs-lg;
+  margin-bottom: 0;
+  &.dt-top {
+    > div {
+      align-items: stretch;
+    }
+  }
+  &.border-type {
+    box-sizing: border-box;
+    padding: 1.5rem 1rem;
+    border: 1px solid $gray5;
+    border-radius: toRem(12);
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: toRem(26);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  dt {
+    font-weight: $fw-r;
+    line-height: $line-height-lg;
+    .ico {
+      margin-right: toRem(10);
+    }
+  }
+  dd {
+    text-align: right;
+    margin-bottom: 0;
+    del {
+      margin-right: toRem(8);
+      font-family: $font-family-number;
+      font-size: inherit;
+      font-weight: $fw-r;
+      color: $gray3;
+      text-decoration: line-through;
+      &.lg {
+        font-size: toRem(20);
+      }
+    }
+    .ico {
+      margin-right: toRem(8);
+    }
+    .num-1 + .btn {
+      margin-left: toRem(8);
+    }
+    .flex-end {
+      display: flex;
+      justify-content: flex-end;
+      &.gray {
+        color: $gray2;
+      }
+    }
+  }
+  &.sm {
+    font-size: $fs-md;
+  }
+  // 금액 및 기타 숫자 text
+  .num {
+    &-1 {
+      position: relative;
+      font-family: $font-family-number;
+      //font-size: toRem(16);
+      font-size: inherit;
+      font-weight: $fw-b;
+    }
+    &-2 {
+      position: relative;
+      font-family: $font-family-number;
+      font-size: toRem(32);
+      font-weight: $fw-b;
+      &::after {
+        font-size: 0.75em;
+      }
+    }
+  }
+  // 단위명
+  .unit {
+    &-t::after {
+      content: '만원';
+      margin-left: toRem(4);
+      //font-size: $fs-lg;
+    }
+    &-p::after {
+      content: '\0025';
+      margin-left: toRem(4);
+      //font-size: $fs-lg;
+      font-weight: $fw-b;
+    }
+    &-m::after {
+      content: '분';
+      margin-left: toRem(4);
+      //font-size: $fs-lg;
+    }
+    &-w::after {
+      content: '원';
+      margin-left: toRem(4);
+      //font-size: $fs-lg;
+    }
+    &-mth::after {
+      content: '개월';
+      margin-left: toRem(4);
+      //font-size: $fs-lg;
+    }
+  }
+  .badge.rounded-pill {
+    margin-right: toRem(8);
+  }
+}
+.price-amount {
+  em {
+    font-size: 1em;
+    font-style: normal;
+  }
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+  width: 100%;
+  .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid $black;
+  }
+  &.arrow-link {
+    .list-group-item {
+      padding: 0;
+      border-width: toRem(1) 0 0 0;
+      border-color: $gray5;
+      &:first-child {
+        border-top-width: 0;
+      }
+      .btn {
+        display: flex;
+        justify-content: space-between;
+        padding: toRem(25) 0;
+      }
+    }
+  }
+  &.border-round {
+    .list-group-item {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      & + .list-group-item {
+        margin-top: 0.75rem;
+        border-top-width: 0.063rem;
+      }
+    }
+  }
+}
+
+// 모듈아이디 미정
+.amt-req {
+  > div {
+    &:last-child {
+      margin-top: toRem(24);
+      padding-top: toRem(26);
+      border-top: 1px solid $gray5;
+    }
+  }
+}
+// -----------------------------------------------------------------------------
+// Table component
+// -----------------------------------------------------------------------------
+/* Table */
+.table {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-right: 1px solid $gray5;
+  border-bottom: 1px solid $gray5;
+  &.t-center {
+    text-align: center;
+  }
+  &.v-center {
+    vertical-align: middle;
+  }
+  & > :not(:last-child) > :last-child > * {
+    border-bottom: none;
+  }
+  th,
+  td {
+    border: 1px solid $gray5;
+    padding: 1.4375rem 1rem;
+    font-size: $fs-md;
+    word-break: keep-all;
+  }
+  th {
+    color: $black;
+    font-weight: $fw-m;
+  }
+  td {
+    color: $gray2;
+    font-weight: $fw-r;
+    line-height: 1.57;
+  }
+}
+.table.table-round {
+  border-right: none;
+  border-bottom: none;
+
+  tr > th:first-child,
+  tr > td:first-child {
+    border-left: none;
+  }
+  tr > th:last-child,
+  tr > td:last-child {
+    border-right: none;
+  }
+  tr:first-child > th:first-child,
+  tr:first-child > td:first-child {
+    border-left: none;
+  }
+  tr:first-of-type > th,
+  tr:first-of-type > td {
+    border-top: none;
+  }
+  tr:last-child > td {
+    border-bottom: none;
+  }
+  thead > tr:last-child > th {
+    border-bottom: 1px solid $gray5;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid $gray5;
+    border-radius: toRem(8);
+  }
+}
+// -----------------------------------------------------------------------------
+// Info text boxes component
+// -----------------------------------------------------------------------------
+
+// =====================
+// Info boxes
+// - 블릿과 텍스트 조합
+// =====================
+
+.info {
+  .icon {
+    margin-right: toRem(6);
+  }
+  &-blue {
+    font-size: $fs-md;
+    font-weight: $fw-r;
+    color: $blue2;
+  }
+}
+
+.inner-text-wrap{
+  padding: toRem(16);
+  border: 1px solid #333;
+}
+.inner-text {
+  display: block;
+  & + & {
+    margin-top: toRem(16);
+  }
+  & > span {
+    display: block;
+    text-align: left;
+    & + span {
+      margin-top: toRem(8);
+    }
+  }
+  .tit {
+    @include font-st(1rem, $black, $fw-b);
+    @include text-shorten(1);
+    display: flex;
+    justify-content: space-between;
+    &.lg {
+      font-size: toRem(20);
+    }
+    .sub-tit {
+      @include split-line(0.875rem, $color: $gray5);
+      @include font-st($fs-md, $black, $fw-r, normal);
+      margin-left: 6px;
+      padding-left: 7px;
+    }
+  }
+  .txt {
+    // 김예리_퍼블 수정
+    @include font-st(0.875rem, $black, $fw-r);
+    &.bold {
+      font-weight: $fw-b;
+    }
+    &.text-gray2{
+      color:$gray2;
+    }
+  }
+}
+
+.inner-add-icon {
+  display: flex;
+  width: 100%;
+  .ico,
+  .icon {
+    flex: 0 0 auto;
+    margin-right: toRem(10);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.inner-card-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .card-img {
+    @include small-card-img(false, toRem(20), toRem(32));
+    margin-bottom: 0;
+    margin-right: toRem(12);
+    flex: 0 0 auto;
+  }
+  .inner-text > span {
+    & + span {
+      margin-top: toRem(6);
+    }
+  }
+  .inner-text .txt > em {
+    @include split-line(0.75rem, $gray5);
+    display: inline-block;
+    margin-left: toRem(6);
+    padding-left: toRem(6);
+    font-style: normal;
+    &:first-child {
+      margin-left: 0;
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.inner-select-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .txt {
+    @include font-st(0.875rem, $black, $fw-r);  
+  }
+  .ico + .txt{
+    margin-top: toRem(8);
+  }
+}
+// -----------------------------------------------------------------------------
+// Module
+// -----------------------------------------------------------------------------
+.pagelabel002 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+}
+.pagelabel003 {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.pagelabel004 {
+  display: flex;
+  justify-content: space-between;
+}
+.sub-label {
+  font-size: toRem(20);
+  color: $black;
+}
+.month-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: $gray6;
+  border-radius: toRem(8);
+  button {
+    padding: 0.688rem 0.875rem;
+  }
+  .month-title {
+    font-size: $fs-md;
+    font-weight: $fw-b;
+    color: $black;
+    vertical-align: middle;
+    & + .ico {
+      margin-left: toRem(6);
+    }
+  }
+}
+
+.month-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $gray6;
+  border-radius: toRem(8);
+  button {
+    padding: 0.688rem 0.875rem;
+  }
+  .month-title {
+    font-size: $fs-md;
+    font-weight: $fw-b;
+    color: $black;
+    vertical-align: middle;
+    & + .ico {
+      margin-left: toRem(6);
+    }
+  }
+}
+
+.btn-full-lg {
+  .btn {
+    align-items: flex-start;
+  }
+  .ico {
+    margin-top: 2px;
+  }
+  &.align-rvt .btn {
+    align-items: flex-start;
+  }
+  &.align-rvm .btn {
+    align-items: center;
+  }
+  &.align-rvb .btn {
+    align-items: flex-end;
+  }
+}
+.mystatementarea001 {
+  .price-disp {
+    margin-top: toRem(16);
+    .amount-col > dt {
+      line-height: 2.1;
+    }
+  }
+}
+
+
+
+//
+.info-desc {
+  span {
+    color: $blue2;
+    vertical-align: middle;
+  }
+}
+
+//
+.t-box {
+  div {
+    color: $gray1;
+    & + .dot-list {
+      margin-top: toRem(24);
+    }
+  }
+}
+
+//
+.wcms-area {
+  & * {
+    margin-top: toRem(24);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+.btn-group-cta {
+  .btn {
+    @extend %btn-font-style1;
+    min-height: 60px;
+    margin: 0;
+    border-radius: $btn-radius-none;
+  }
+}
+.mdl-wrap.cmn-bottomrectanglebutton001 {
+  //
+}
+// 삭제
+.mdl-wrap.cmn-arrowtitle001 {
+  .page-hd-wrap {
+    @include fixed-top();
+  }
+}
+.infotel-area {
+  span {
+    display: flex;
+    justify-content: space-between;
+    .info-tel {
+      color: $blue2;
+      font-weight: $fw-b;
+    }
+  }
+}
+.info-tel {
+  color: $blue2;
+  margin-left: toRem(8);
+}
+
+.history-detail {
+  width: 100%;
+  position: relative;
+  .inner-select {
+    justify-content: space-between;
+    .inner-text {
+      display: flex;
+      > span {
+        margin: 0;
+      }
+      > .ico {
+        margin-right: toRem(8);
+      }
+    }
+    .card-img {
+      width: toRem(30);
+      height: toRem(48);
+    }
+  }
+}
+.ico-msg-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: toRem(16);
+  img {
+    width: toRem(220);
+  }
+  div {
+    line-height: toRem(24);
+    margin-top: toRem(24);
+  }
+}
+.amount-dl {
+  &.amt-btn-type {
+    dd {
+      .flex-end {
+        margin-top: toRem(6);
+      }
+    }
+  }
+}
+.gray-rounded {
+  position: relative;
+  padding: toRem(24) toRem(16);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: toRem(12);
+  background-color: $gray6;
+  & + & {
+    margin-top: toRem(12);
+  }
+  &.txt-fadvance{
+    min-height: toRem(68);
+  }
+}
+.txt-fadvance {
+  .txt {
+    margin-top: toRem(14);
+    line-height: 1.57;
+  }
+}
+// MDFinanceCardloanArea002(중복모듈아이디로 css여기에 추가)
+.step-guide-box .list-group .list-group-item {
+  position: relative;
+  border: 0rem none;
+  padding: 0;
+  padding-left:toRem(28); //211027 김예리수정
+  color: #111111;
+  font-weight: bold;
+  padding-bottom: 2rem;
+  list-style: none;
+}
+.step-guide-box .list-group .list-group-item:last-child{padding-bottom:0;}
+.step-guide-box .list-group .list-group-item > div {
+  display: inline-block;
+}
+.step-guide-box .list-group .list-group-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  border-left: 2px dotted #999999;
+  top:toRem(22.4);
+  bottom:0;
+  left: toRem(9); //211027 김예리수정
+  z-index:1;
+}
+.step-guide-box .list-group .list-group-item > ul > li {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-top: 0.625rem;
+  list-style: none;
+}
+
+.step-guide-box .list-group .list-group-item > ul :first-child {
+  margin-top: 0.813rem;
+}
+.step-guide-box .step-num {
+  position:absolute;
+  left:toRem(4); //211027 김예리수정
+  top:4px;
+  width: toRem(13);
+  height: toRem(13);
+  line-height: toRem(12);
+  font-size: toRem(9);
+  text-align: center;
+  background-color: #000;
+  border-radius: 0.75rem;
+  margin-right: 1rem;
+  font-weight: 300;
+  color:#fff;
+  z-index:3;
+}
+.interest-chk {
+  margin-top: toRem(64);
+  & + .interest-chk {
+    position: relative;
+    margin-top: toRem(52);
+    padding-top: toRem(52);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 5.625rem);
+      margin-left: toRem(-45);
+      height: toRem(6);
+      background-color: #f4f6fb;
+    }
+  }
+  & + .btn-group-round {
+    margin-top: toRem(33);
+  }
+}
+
+//211006 vue단 요청으로 .list-box 스타일 밖으로 분리함 김예리
+.bnfit-list {
+  ul {
+    li {
+      & + li {
+        margin-top: toRem(12);
+      }
+    }
+  }
+}
+.list-box {
+  box-sizing: border-box;
+  padding: toRem(24) toRem(16);
+  border: 1px solid $gray5;
+  border-radius: toRem(12);
+  > .title {
+    & + .amount-dl {
+      margin-top: toRem(16);
+      padding-top: toRem(32);
+      border-top: 1px solid $gray5;
+    }
+  }
+  .amount-dl {
+    > div {
+      margin-top: toRem(17);
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .btn-group-round {
+    margin-top: toRem(24);
+  }
+  &.disabled-mode,
+  &.disabled {
+    > div {
+      color: $gray3;
+    }
+    .amount-dl {
+      dt {
+        color: $gray3;
+      }
+      dd {
+        span {
+          color: $gray3;
+        }
+      }
+    }
+  }
+  & + .list-box{
+    margin-top: toRem(12);
+  }
+}
+
+.bottom-inner-amt1 {
+  .page-title {
+    .sub_text {
+      margin-top: 0;
+    }
+    & + div {
+      margin-top: toRem(16);
+    }
+  }
+  .tit-line {
+    margin-top: toRem(32);
+  }
+}
+.bottom-inner-amt2 {
+  .btn-list-more {
+    margin-top: toRem(32);
+  }
+  .inner-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: toRem(16);
+    font-size: toRem(14);
+    border-bottom: 1px solid $gray5;
+    & + div {
+      margin-top: toRem(36);
+    }
+  }
+}
+
+.amt-breakdown {
+  .d-grid {
+    .form-check {
+      .form-check-label {
+        min-height: auto;
+        text-align: justify;
+        display: block;
+				// 고하늘_퍼블 추가
+				padding: toRem(26) toRem(16) toRem(24);
+      }
+			// 고하늘_퍼블 추가
+			.form-check-input:checked + .form-check-label{
+				padding-bottom: 16px;
+			}
+      .cont-selected {
+        padding: toRem(18) toRem(16) toRem(26);
+				// 고하늘_퍼블 추가
+				margin-top: toRem(-18);
+        .amount-dl {
+          padding-top: toRem(26);
+          border-top: 1px solid $gray5;
+          > div {
+            margin-top: toRem(16);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tit-line {
+  padding-top: toRem(33);
+  border-top: 1px solid $gray5;
+  & + .infotel-area {
+    margin-top: toRem(24);
+  }
+}
+
+
+.req-table {
+  position: relative;
+  margin-top: toRem(52);
+  padding-top: toRem(52);
+  .h4 {
+    & + .table {
+      margin-top: toRem(16);
+    }
+  }
+  .table {
+    td{
+      vertical-align: middle;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 5.625rem);
+    margin-left: toRem(-45);
+    height: toRem(6);
+    background-color: #f4f6fb;
+  }
+}
+.table {
+    td{
+      &.text-left {
+        text-align: left;
+      }
+    }
+  }
+  
+.amount-dl{
+  .result{
+    padding-top:1.625rem;
+    border-top:1px solid #e2e5eb;
+  }
+}
+.idx-area {
+  .amt-tit {
+    font-size: toRem(20);
+    & + .tit-line {
+      margin-top: toRem(16);
+    }
+  }
+}
+.amount-tit {
+  &.add-btn {
+    dd {
+      color: $black;
+      font-weight: $fw-m;
+      label {
+        margin-right: toRem(8);
+      }
+    }
+  }
+}
+
+
+.btn-full-lg.reserv-box {
+  & + .reserv-box {
+    margin-top: toRem(32);
+  }
+  .btn-contained {
+    display: inline-block;
+    .inner-text {
+      display: flex;
+      justify-content: space-between;
+    }
+    & + .dot-text {
+      margin-top: toRem(16);
+    }
+    & + .dot-list {
+      margin-top: toRem(16);
+    }
+  }
+  .inner-text {
+    padding-bottom: toRem(24);
+  }
+  .dot-text {
+    position: relative;
+    padding-left: toRem(10);
+    color: $gray2;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: toRem(4);
+      height: toRem(4);
+      border-radius: 100%;
+      background-color: $gray2;
+    }
+  }
+}
+
+.amount-dl + .amount-dl {
+  &.tit-line {
+    margin-top: toRem(24);
+    padding-top: toRem(26);
+  }
+}
+.mr-6 {
+  em {
+    margin-left: toRem(6);
+  }
+}
+.amount-col.align-start{
+  align-items: flex-start;
+}
+.amount-tit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: toRem(24);
+  &.line{
+    border-top: 1px solid $gray5;
+  }
+  dt {
+    font-size: toRem(14);
+    font-weight: $fw-r;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    .type {
+      max-width: 90px;
+      @include text-shorten(2);
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: toRem(6);
+      padding-right: toRem(6);
+      &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: toRem(2);
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: auto;
+        background-color: $gray5;
+      }
+      &:last-child{
+        &::after{
+          display: none;
+        }
+      }
+    }
+  }
+  dd {
+    margin: 0;
+    color: $blue2;
+    text-align: right;
+    word-break: break-all;
+    font-weight: $fw-b;
+  }
+}
+.mystatementarea005{
+  .amount-dl {
+    width: 100%;
+    .amount-col {
+      display: block;
+      & + .amount-col {
+        margin-top: toRem(34);
+      }
+      dt{
+        display: flex;
+        align-items: flex-start;
+        width: 60%;
+        margin-right: 5%;
+        .tit {
+          margin-right: toRem(5); 
+        }
+        i {
+          flex-shrink: 0;
+          margin-top: toRem(3);
+        }
+      }
+    }
+    .amount-col > div{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .price-amount.font-size-sm {
+      font-size: $font-size-sm;
+    }
+    .amount-detail {
+      align-items: flex-start;
+      margin: toRem(6) 0 0 toRem(32);
+      .info {
+        li {
+          font-weight: $fw-r;
+          font-size: toRem(14);
+          color: #666;
+          & + li {
+            margin-top: toRem(6);
+          }
+          span + span {
+            position: relative;
+            margin-left: toRem(6);
+            padding-left: toRem(6);
+            &::before {
+              content: '';
+              display: inline-block;
+              position: absolute;
+              top: toRem(4);
+              left: 0;
+              width: 1px;
+              height: toRem(14);
+              background-color: $gray5;
+            }
+          }
+          .price-amount {
+            font-weight: $fw-r;
+            font-size: toRem(14);
+            color: #666;
+          }
+          em {
+            font-weight: $fw-r;
+          }
+        }
+      }
+      .card-img{
+        width: toRem(20);
+      }
+    }
+    .amount-cancel {
+      margin-top: toRem(12);
+      padding: toRem(12) 0 0 toRem(32); 
+      border-top: 1px dashed $gray5;
+      .price-amount {
+        color: $red;
+      }
+    }
+  }
+}
+.mystatementarea007 {
+  .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .txt {
+      margin-right: toRem(54);
+    }
+    .card-img{
+      width: toRem(30);
+      flex: 0 0 auto;
+    }
+  }
+  .amount {
+    margin-top: toRem(32);
+    dt {
+      font-weight: $fw-r;
+    }
+    dd {
+      margin: toRem(6) 0 0;
+      font-size: toRem(24);
+      .price {
+        margin-right: toRem(4);
+        font-size: toRem(32);
+        font-family: $font-family-number;
+      }
+    }
+  }
+}
+
+.alert-subtitle {
+  color: $black;
+  line-height: toRem(24);
+}
+.modal-line {
+  & + .modal-line {
+    border-top: 1px solid #e2e5eb;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    line-height: 1.5rem;
+  }
+}
+.modal-btn-wrap {
+  .row {
+    & + .row {
+      margin-top: toRem(12);
+    }
+  }
+} 
+
+.form-checkbox {
+  border: 1px solid $gray5;
+  padding: toRem(16);
+  border-radius: toRem(12);
+  .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .checkbox-header {
+    padding: toRem(8) 0 toRem(16);
+  }
+  .checkbox-body {
+    border-top: 1px solid $gray5;
+    padding-top: toRem(12);
+    .check-item {
+      display: flex;
+      justify-content: space-between;
+      padding: toRem(12) 0;
+    }
+  }
+  .form-check-input {
+    margin-right: toRem(8);
+  }
+  .form-check-label {
+    @include font-st($fs-md, $black, $fw-r, normal);
+  }
+  & + .form-checkbox {
+    margin-top: toRem(12);
+  }
+}
+.form-ip {
+  .form-wrap-iptext,
+  .form-wrap-ipbutton {
+    margin-top: toRem(32);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .inner-line {
+    position: relative;
+    padding-top: toRem(104);
+    &:before {
+      content: "";
+      position: absolute;
+      top: toRem(52);
+      left: 0;
+      width: calc(100% + 5.625rem);
+      margin-left: -2.8125rem;
+      height: 0.375rem;
+      background-color: #f4f6fb;
+    }
+  }
+}
+.form-ip-multi {
+  .form-wrap-iptext,
+  .form-wrap-ipbutton {
+    margin-top: toRem(22);
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+.amount-dl.tit-line {
+  & + .tit-line {
+    margin-top: toRem(34);
+  }
+}
+.accordion.accordion-dotlist {
+  .accordion-body {
+    padding: toRem(24) 0;
+  }
+}
+.title-wrap +.form-check-group.ck-group-t1 {
+  margin-top: toRem(16);
+}
+.apply-select-list{
+  .amount-dl{
+    margin-top:1rem;
+  }
+  .form-checkbox{
+    margin-top:1rem;
+  }
+}.tab-pane {
+  > .btn-full-lg {
+    margin-top: toRem(12);
+    &:first-of-type {
+      margin-top: toRem(52);
+    }
+  }
+  .page-title {
+    margin-top: toRem(52);
+  }
+  .form-wrap-iptext {
+    margin-top: toRem(32);
+  }
+  .form-wrap-ipbutton {
+    margin-top: toRem(32);
+  }
+  .amount-dl.iarea {
+    margin-top: toRem(32);
+  }
+  .btn-group-round {
+    margin-top: toRem(32);
+  }
+  .dot-list {
+    margin-top: toRem(24);
+  }
+  .ico-msg-box {
+    margin-top: toRem(16);
+  }
+}
+
+.tab-menu {
+  .price-amount {
+    font-size: toRem(24);
+    > del {
+      font-size: toRem(16);
+    }
+    > em {
+      font-size: toRem(32);
+    }
+  }
+}
+.nav-over {
+  .nav {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+}
+
+.ico-msg-box{
+	& + .amount-dl {
+		margin-top: toRem(24);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Private Style
+// -----------------------------------------------------------------------------
+.amount-dl dd .lg {
+  font-size: toRem(20);
+}
+
+.form-ipmulti {
+  .form-control {
+    padding-right: toRem(30);
+  }
+}
+
+.cardb-head .ico {
+  width: toRem(24);
+  height: toRem(24);
+}
+// 팝업 모듈화
+//PGHPPPPFinanceCardloanApplyInputLoanTermTypeA001
+//PGHPPPPFinanceCardloanApplyInputRepaymentOptionTypeA001
+
+$pink: #ffc0cb;
+$gray01: #e2e5eb;
+$gray02: #dddddd;
+$gray03: #cdcdcd;
+$gray04: #666666;
+$dark: #000000;
+
+@mixin img-background($width, $height, $background) {
+  width: $width;
+  height: $height;
+  background: $background;
+}
+
+@mixin tit-card($width, $height, $background) {
+  width: $width;
+  height: $height;
+  background: $background;
+  top: calc(48px - #{$height});
+}
+
+//////////////////// 테스트 페이지 css - 시작 ////////////////////
+// 공통
+.main-tit {
+  font-size: toRem(18);
+}
+.info-input {
+  border: toRem(0) none;
+  border-bottom: toRem(2) solid $gray02;
+  border-radius: 0;
+  background-color: transparent;
+  &::placeholder {
+    font-weight: $font-weight-light;
+    color: $gray03;
+  }
+  &:focus {
+    border-color: $blue;
+    box-shadow: none;
+  }
+}
+.info-select {
+  height: toRem(50);
+  border-radius: toRem(8);
+  font-size: $font-size-sm;
+}
+.scard-foot-btn {
+  width: 100%;
+  height: toRem(60);
+  background-color: $blue;
+}
+.footer-blank {
+  padding-bottom: toRem(60);
+}
+// 카드신청
+.apply-nav {
+  height: toRem(48);
+  margin: 0 toRem(-24);
+  border-bottom: toRem(1) solid $gray01;
+  font-size: $font-size-sm;
+  &-item {
+    height: 100%;
+    &.active {
+      border-bottom: toRem(2) solid $dark;
+      position: relative;
+      top: toRem(1);
+    }
+  }
+  &-link {
+    font-weight: $font-weight-normal;
+    color: $gray04;
+    line-height: toRem(20);
+  }
+}
+.apply-service {
+  padding-left: toRem(8);
+  font-size: $font-size-sm;
+  color: $gray04;
+  line-height: toRem(22);
+  &_sale {
+    @include img-background(toRem(16), toRem(16), $pink);
+    display: inline-block;
+    position: relative;
+    top: toRem(3);
+    margin-left: toRem(3);
+  }
+}
+
+.apply-grid {
+  &:nth-child(1) {
+    padding-right: toRem(3);
+  }
+  &:nth-child(2) {
+    padding-left: toRem(3);
+  }
+  & &-btn {
+    padding-left: 0;
+    margin-bottom: 0;
+    .active {
+      border: toRem(1) solid $blue;
+      color: $blue;
+    }
+  }
+}
+.card-drive {
+  width: toRem(302);
+  height: toRem(180);
+  margin: toRem(42) auto;
+  border-radius: toRem(14);
+  background-color: $pink;
+}
+
+// 페이지
+.card-service {
+  margin-bottom: toRem(42);
+}
+.card-adress {
+  margin-bottom: toRem(32);
+}
+.card-info {
+  font-size: $font-size-sm;
+}
+.card-divider {
+  margin: toRem(36) 0;
+}
+.tabtab-txt {
+  margin: toRem(20) 0 0 0;
+  font-size: $font-size-base;
+  font-weight: bold;
+}
+
+.dot-txt {
+  position: relative;
+  font-size: $font-size-sm;
+  color: $gray04;
+  padding-left: toRem(13);
+  &::before {
+    content: '·';
+    position: absolute;
+    left: toRem(3);
+  }
+}
+.chk-txt {
+  font-size: $font-size-sm;
+  color: $gray04;
+}
+
+// test
+.test1 {
+  font-size: 1.5rem;
+  line-height: toRem(36);
+  color: $black;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-sans-serif;
+}
+.test2 {
+  font-weight: $font-weight-bold;
+  color: $black;
+  &-2 {
+    font-family: $font-family-number;
+    font-size: 2rem;
+  }
+}
+
+// slide test
+.apply-slide {
+  .carousel-item {
+    float: none;
+  }
+}
+.apply-slide2 {
+  overflow: hidden;
+  .swiper-wrapper {
+    overflow: hidden;
+    width: toRem(10000);
+  }
+  .swiper-slide {
+    float: left;
+    margin-right: toRem(72);
+  }
+}
+.test-modal {
+  .modal-dialog {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    .modal-content {
+      border: 0;
+      border-radius: 0;
+      min-height: toRem(228);
+      // border-top-left-radius: 20px;
+      // border-top-right-radius: 20px;
+      @include bd-radius(toRem(20), top);
+    }
+    .modal-header {
+      border-bottom: 0px none;
+      margin-top: toRem(20);
+    }
+  }
+  &-tit {
+    font-weight: bold;
+    margin-bottom: 0;
+    & + i {
+      @include ico-size(14);
+    }
+  }
+}
+
+// 의미없는 공간 태그
+.test {
+  width: 100%;
+  height: toRem(100);
+}
+//////////////////// 테스트 페이지 css - 끝 ////////////////////
+
+//////////////////// common - 시작 ////////////////////
+// 10 자동심사 > 진행바 progress 및 결과 UI
+.progress-type1 {
+  &-percent {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+    color: $blue;
+    font-size: $font-size-lg;
+    font-family: $font-family-number;
+  }
+  .progress {
+    height: 0.25rem;
+    margin: 0 -1.313rem;
+    .progress-bar {
+      width: 50%;
+    }
+  }
+}
+
+// 08 금융_04일부결제금액이월약정
+.range {
+  position: relative;
+  width: auto;
+  height: 8.563rem;
+  background-color: $gray6;
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  &-value {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%);
+    > span {
+      width: 3.25rem;
+      height: 2rem;
+      line-height: 2.125rem;
+      text-align: center;
+      background: $blue;
+      color: #fff;
+      font-size: 0.875rem;
+      display: block;
+      border-radius: 0.375rem;
+      font-family: $font-family-number;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 0.375rem solid $blue;
+        border-left: 0.375rem solid transparent;
+        border-right: 0.375rem solid transparent;
+        top: 100%;
+        left: 50%;
+        margin-left: -0.313rem;
+        margin-top: -0.063rem;
+      }
+    }
+  }
+  &-input {
+    -webkit-appearance: none;
+    width: 100%;
+    margin-top: 3.3rem;
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 0.625rem;
+      cursor: pointer;
+      animation: 0.2s;
+      background: $blue;
+      border-radius: 0.313rem;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-color: $white;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      box-shadow: 0.063rem 0.063rem 0.188rem 0.063rem rgba(0, 0, 0, 0.08);
+      cursor: point;
+      margin-top: -0.313rem;
+    }
+  }
+  &-percent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: $gray2;
+    font-family: $font-family-number;
+  }
+}
+
+// 22.2 장기카드대출 신청 안내 > Step
+.list-group.step {
+  .list-group-item {
+    position: relative;
+    border: 0rem none;
+    padding: 0;
+    color: $black;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    list-style: none;
+    > div {
+      display: inline-block;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: -0.1rem;
+      width: 0.375rem;
+      height: 0.375rem;
+      background-color: $black;
+      border-radius: 50%;
+      margin-right: 0.625rem;
+    }
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      border-left: 0.063rem dashed $gray3;
+      height: calc(100% + 0.438rem);
+      top: 1.5rem;
+      left: 0.15rem;
+    }
+    > ul {
+      margin-left: 6.5rem;
+      > li {
+        font-size: 0.875rem;
+        font-weight: 300;
+        margin-top: 0.625rem;
+        list-style: none;
+      }
+      :first-child {
+        margin-top: 0.813rem;
+      }
+    }
+    .step-item-list {
+      display: inline-block;
+      width: 4.313rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      background-color: $gray6;
+      border-radius: 0.75rem;
+      margin-right: 1rem;
+      font-weight: 300;
+    }
+  }
+}
+
+// 탭탭카드
+.tabtab-card {
+  width: 9.375rem;
+  height: 15rem;
+  margin: 7rem auto 0;
+  border-radius: 0.875rem;
+  background: pink;
+  box-shadow: 0.188rem 0.375rem 1.375rem toRem(0) rgba(0, 0, 0, 0.3);
+}
+.tabtab-percent {
+  font-family: $font-family-number;
+  margin-top: 2.625rem;
+  font-size: 2.25rem;
+  color: $gray01;
+  line-height: 2.125rem;
+  text-align: center;
+}
+//////////////////// common - 끝 ////////////////////
+
+//////////////////// statement - 시작 ////////////////////
+.btn-area {
+  .btn-statement {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.688rem 1.131rem;
+    &-tit {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #111111;
+      vertical-align: middle;
+      & + .ico {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.card-money {
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    > div:nth-child(2) {
+      display: flex;
+      align-items: flex-end;
+      margin-left: auto;
+    }
+  }
+  &-tit {
+    margin-bottom: 1.125rem;
+    > .icon {
+      position: relative;
+      top: -0.063rem;
+      margin-right: 0.125rem;
+    }
+  }
+  &-price {
+    font-size: 1.5rem;
+    > span {
+      font-family: $font-family-number;
+      font-size: 2rem;
+      margin-right: 0.25rem;
+    }
+  }
+  &-img {
+    @include img-background(1.25rem, 2rem, $pink);
+    position: relative;
+    top: -0.75rem;
+  }
+}
+
+.amount {
+  &.divider {
+    &::after {
+      content: '';
+      display: block;
+      border-bottom: toRem(1) solid $gray5;
+    }
+  }
+  &.next-block {
+    margin-top: 1.8rem;
+  }
+  .payment {
+    color: $blue2;
+  }
+}
+
+.arccordian-amount {
+  margin-top: 0.6rem;
+  .row {
+    > * {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.amount-divider {
+  position: relative;
+  margin-top: 2.688rem !important;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 98%;
+    border-bottom: toRem(1) solid $gray5;
+    top: -1.25rem;
+  }
+}
+.amount-divider-pur {
+  position: relative;
+  margin-top: 2.688rem !important;
+  padding-top: 0.5rem;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: toRem(1) solid $gray5;
+    top: -1.25rem;
+  }
+}
+
+.v-divider-r {
+  &:after {
+    content: '';
+    border-right: 0.063rem solid $gray5;
+    height: 1rem;
+    margin: 0 0.438rem 0 0.75rem;
+  }
+}
+.v-divider-l {
+  &::before {
+    content: '';
+    border-right: 0.063rem solid $gray5;
+    height: 0.75rem;
+    margin: 0 0.438rem 0 0.438rem;
+  }
+}
+
+.sec_body .sc-acc-wrap .accordion-item .accordion-button {
+  padding: 0 0 1.3125rem 0;
+}
+
+.sec_body .sc-acc-wrap.box-type {
+  margin-top: 0 !important;
+}
+
+.modal-dialog.bottom-to-center {
+  width: 100%;
+}
+
+.ena-loadmap {
+  width: 100%;
+  height: 10rem;
+  background-color: pink;
+  border-radius: 1.125rem;
+}
+
+.list-group.usage-default {
+  .list-group-item {
+    padding: 0;
+    border: 0rem none;
+    margin-top: 1rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// .form-check-group.usage-outline {
+//   .d-grid {
+//     .form-check {
+//       margin-top: 12px;
+//     }
+//     &:first-child {
+//       .form-check {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }
+
+.inner-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .ico {
+    margin-right: 0.625rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .inner-text {
+    > span + span {
+      margin-top: 0.375rem;
+    }
+  }
+}
+
+//////////////////// statement - 끝 ////////////////////
+
+//////////////////// appcard - 시작 ////////////////////
+.apply-card {
+  display: flex;
+  align-items: flex-end;
+  float: right;
+  position: relative;
+  bottom: 3.313rem;
+  &-item {
+    position: relative;
+    @include tit-card(1.25rem, 2rem, $pink);
+    margin: 0 0 0 0.5rem;
+  }
+}
+.appcard-summary {
+  margin-left: 0.813rem;
+}
+.apply-accordion {
+  border: toRem(1) solid $blue;
+  border-radius: toRem(16);
+  margin-top: 1rem;
+  &:first-child {
+    margin-top: 0;
+  }
+  &.accordion-item {
+    border-radius: toRem(16);
+    border-top: toRem(1) solid $blue;
+  }
+  &-label {
+    max-width: calc(100% - 50px);
+    font-weight: 500;
+  }
+  &-box {
+    padding: toRem(24);
+  }
+  &-hr {
+    margin: toRem(-16) 0 toRem(28) 0;
+  }
+  &-txt {
+    font-size: $font-size-sm;
+    color: $gray04;
+  }
+}
+.apply-btn {
+  width: 100%;
+  height: toRem(42);
+  border-radius: toRem(8);
+  border: toRem(0) none;
+  font-size: $font-size-sm;
+  margin: 0.5rem 0;
+  font-weight: 300;
+  background-color: #f4f6fb;
+  color: $dark;
+}
+.apply-radio {
+  .form-check + .form-check {
+    margin-left: 0;
+  }
+  &-input {
+    float: right !important;
+  }
+  &-box {
+    padding: 1.563rem;
+    margin-bottom: 0.75rem;
+    border: 0.063rem solid #e2e5eb;
+    border-radius: 1rem;
+  }
+  &-txt {
+    position: relative;
+    top: 0.625rem;
+    margin-bottom: 0.625rem;
+    padding-left: 1.875rem;
+    font-size: $font-size-sm;
+    color: $gray04;
+    line-height: 1.375rem;
+  }
+  &-img {
+    position: relative;
+    top: -0.125rem;
+    margin-right: 0.375rem;
+  }
+  &_starb {
+    @include img-background(1.375rem, 1.375rem, $pink);
+  }
+  &_ten {
+    @include img-background(1.375rem, 1.375rem, $pink);
+  }
+  &_market {
+    @include img-background(1.375rem, 1.375rem, $pink);
+  }
+  &_cumers {
+    @include img-background(1.375rem, 1.375rem, $pink);
+  }
+  &_shop {
+    @include img-background(1.375rem, 1.375rem, $pink);
+  }
+}
+.page-title {
+  width: 100%;
+  position: relative;
+  .count {
+    position: absolute;
+    right: 0;
+    top: toRem(2);
+    font-family: $font-family-number;
+    .count-current {
+      font-weight: 500;
+      color: #0080ff;
+    }
+    .count-all {
+      font-weight: 500;
+    }
+    .count-all:before {
+      content: '|';
+      margin: 0 toRem(2) 0 0;
+      height: toRem(13);
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      // top: 0.063rem;
+    }
+  }
+}
+//////////////////// appcard - 끝 ////////////////////
+
+.inner-contact {
+  font-size: 0.875rem;
+  font-weight: 500;
+  .adress::after {
+    content: '';
+    border-left: 0.063rem solid #e2e5eb;
+    height: 0.813rem;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    top: 0.063rem;
+    margin: 0 0.188rem 0 0.375rem;
+  }
+}
+
+.link-checkbox {
+  border-radius: toRem(16);
+  border: toRem(1) solid #2090ff;
+  min-width: toRem(318);
+  .link-checkbox-header {
+    .form-check {
+      position: relative;
+      padding: toRem(24) 0 toRem(16);
+      padding: toRem(26) 0;
+      margin-left: toRem(44);
+      @include font-st(toRem(16), $black, $fw-b, normal);
+      line-height: 1.5;
+      input {
+        position: relative;
+        top: toRem(3);
+        margin-right: toRem(8);
+      }
+      .ico {
+        position: absolute;
+        right: toRem(10);
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: toRem(22);
+        top: toRem(64);
+        width: 100%;
+        border-bottom: toRem(1) solid #e2e5eb;
+      }
+    }
+  }
+  .link-checkbox-body {
+    .list-group {
+      .list-group-item {
+        padding: 0;
+        background-color: transparent;
+        border: 0px none;
+        .form-check {
+          padding-top: toRem(26);
+          margin-left: toRem(14);
+          font-size: toRem(14);
+          min-width: toRem(318);
+          input {
+            margin-right: toRem(5);
+            position: relative;
+            top: toRem(-1);
+          }
+          .ico {
+            position: absolute;
+            right: toRem(10);
+          }
+          a {
+            display: inline-block;
+            cursor: pointer;
+          }
+        }
+        &:last-child {
+          padding-bottom: toRem(26);
+        }
+      }
+    }
+  }
+}
+// dot list
+// 211022 김예리수정 : 장단기 화면 깨짐으로 주석처리되어있던거 풀고 .dot-list > ul 타고 스타일지정되어있던거 .dot-list > li 로 변경 (문제시 노티바람)
+.dot-list {
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    padding-left: toRem(10);
+    font-size: $fs-md;
+    line-height: 1.57;
+    color: $gray2;
+    word-break: keep-all;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: toRem(7);
+      left: 0;
+      width: toRem(4);
+      height: toRem(4);
+      border-radius: 100%;
+      background-color: $gray2;
+    }
+    & + li {
+      margin-top: toRem(8);
+    }
+  }
+}
+
+// 테이블
+.table-area {
+  .table {
+    text-align: center;
+    &-border-radius {
+      border-radius: toRem(8);
+      border-style: hidden;
+      box-shadow: 0 0 0 1px $gray5;
+    }
+    // 부트스트랩 충돌
+    // caption {
+    //   @include visually-hidden;
+    // }
+    // end
+    tbody {
+      vertical-align: middle;
+      font-size: $fs-md;
+      color: $gray2;
+      word-break: keep-all;
+      th {
+        padding: 1.4375rem 1rem;
+        border-right: 1px solid $gray5;
+        font-weight: $fw-r;
+        &.bold {
+          font-weight: $fw-b;
+          color: $black;
+        }
+      }
+      td {
+        padding: 1.4375rem 1rem;
+        border-right: 1px solid $gray5;
+        line-height: 1.29;
+      }
+    }
+  }
+}
+
+// 보더타입 리스트
+.list-group {
+  &.border-type {
+    .list-group-item {
+      padding: toRem(24);
+      border-radius: toRem(16);
+      & + .list-group-item {
+        margin-top: toRem(12);
+        border-top-width: toRem(1);
+      }
+    }
+  }
+}
+.item-info {
+  .inner-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .badge {
+      margin-top: 0;
+    }
+    & + .price-amount {
+      display: inline-block;
+      padding-top: toRem(7);
+    }
+  }
+}
+
+// 아이콘 체크박스
+// .form-check-group {
+//   &.ck-group-t4 {
+//     > .row {
+//       --bs-gutter-x: 0.75rem;
+//       --bs-gutter-y: 0.75rem;
+//     }
+//   }
+// }
+// .d-grid .form-check {
+//   &.custom-t4 {
+//     .form-check-label {
+//       padding: 1rem 0;
+//       min-height: toRem(81);
+//     }
+//     .cont-selected {
+//       padding: toRem(32) toRem(24) toRem(24);
+//       margin-top: toRem(-24);
+//       border-top: none;
+//       border-radius: 0 0 toRem(20) toRem(20);
+//       background: $white;
+//       z-index: 2;
+//     }
+//   }
+// }
+// @mixin style-button-outline-select2() {
+//   @extend %btn-default;
+//   @extend %btn-font-style4;
+//   text-align: center;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   color: $black;
+//   border: 1px solid $gray5;
+//   border-radius: toRem(8);
+// }
+// .form-check {
+//   &.custom-t4 {
+//     @include ckd-label($black, transparent, $primary, 1px);
+//     padding-left: 0;
+//     .form-check-label {
+//       @include style-button-outline-select2();
+//     }
+//     .form-check-input {
+//       @include check-blind();
+//     }
+//   }
+// }
+.round-ico-wrap {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  > .ico {
+    margin-bottom: toRem(8);
+  }
+}
+
+// amount 모듈
+.mdl-wrap.cmn-area002 {
+  .mdl-body {
+    .amount-dl {
+      & + .amount-dl {
+        padding-top: toRem(24);
+      }
+      > div {
+        align-items: flex-start;
+      }
+      .amount-col {
+        dt {
+          line-height: toRem(24);
+        }
+      }
+    }
+  }
+}
+// .amount-dl > .detail {
+//   display: inline-block;
+//   margin-top: toRem(6);
+//   color: $gray2;
+//   .sub-title {
+//     &.noti {
+//       color: $red;
+//     }
+//     & + .sub-title{
+//       position: relative;
+//       padding-left: toRem(13);
+//       &:before {
+//         content: '';
+//         position: absolute;
+//         top: 50%;
+//         left: toRem(6);
+//         transform: translateY(-50%);
+//         width: toRem(1);
+//         height: 1rem;
+//         background-color: $gray5;
+//       }
+//     }
+//   }
+// }
+
+.modal-sect {
+  & + .modal-sect {
+    position: relative;
+    margin-top: toRem(32);
+    padding-top: toRem(32);
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1.3125rem;
+      right: -1.3125rem;
+      display: block;
+      height: 0.375rem;
+      background-color: #f4f6fb;
+    }
+  }
+}
+/* mixin */
+%reset {
+  padding: 0;
+  margin: 0;
+}
+
+%outline-btn-lg {
+  border-radius: toRem(16);
+  padding: toRem(24);
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin small-card-img($shadow: true, $w: toRem(30), $h: toRem(48)) {
+  @include bd-radius(toRem(3));
+  @if ($shadow) {
+    box-shadow: 0.1875rem 0.1875rem 0.1875rem rgba(00, 00, 00, 0.3);
+  } @else {
+    box-shadow: none;
+  }
+  display: inline-block;
+  width: $w;
+  height: $h;
+}
+
+@mixin card-show {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0 !important;
+  .card-img {
+    @include small-card-img(false);
+    margin-bottom: 0 !important;
+    margin-right: toRem(24);
+    flex: 0 0 auto;
+  }
+  .card-txt {
+    .card-tit {
+      @include font-st(1rem, $black, $weight: $fw-b);
+      @include text-shorten(1);
+    }
+    .card-detail {
+      @include font-st(toRem(14), $gray1, $fw-m);
+      display: flex;
+      font-size: toRem(14);
+      line-height: 1;
+      margin-top: 6px;
+      .d-info {
+        @include split-line(toRem(12));
+        display: inline-block;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: 1;
+        margin: 0 0 0 toRem(6);
+        padding-left: toRem(6);
+      }
+    }
+  }
+}
+
+@mixin border-round-box {
+  @include bd-radius(toRem(16));
+  overflow: hidden;
+  border: 1px solid #e2e5eb !important;
+}
+
+@mixin acc-size($fsize: 1rem, $pt: 0, $pr: 0, $pb: 0, $pl: 0, $boxtype: false) {
+  .accordion-button {
+    font-size: $fsize;
+    padding: $pt $pr $pb $pl;
+  }
+  @if ($boxtype) {
+    .accordion-body {
+      padding: 0 $pr toRem(12) $pl;
+    }
+  } @else {
+    .accordion-body {
+      padding: 0 $pr 0 $pl;
+    }
+  }
+}
+
+@mixin reset-space {
+  ul,
+  dl {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin detail-info($color: $gray, $fsize: toRem(14), $lineheight: toRem(20)) {
+  display: inline-block;
+  font-size: $fsize;
+  color: $color;
+  line-height: $lineheight;
+  &:not(:first-child) {
+    margin-left: toRem(8);
+    padding-left: toRem(8);
+    @include split-line(toRem(12), #d8d8d8);
+  }
+}
+
+/* bottom modal */
+.blind {
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  color: transparent;
+  overflow: hidden;
+}
+/***** modal *****/
+.sc-modal {
+  margin: 0;
+  .dim {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(18, 20, 29, 0.6);
+    // 부트스트랩 충돌
+    // z-index: $zindex-modal-backdrop;
+    // end
+  }
+  .modal-dialog {
+    margin: 0 toRem(42);
+    // 부트스트랩 충돌
+    // z-index: $zindex-modal;
+    // end
+    max-width: calc(100% - 2.625rem * 2);
+    .modal-content {
+      border: none;
+      overflow: hidden;
+      .modal-header {
+        justify-content: center;
+        border: none;
+        padding: toRem(32) toRem(32) toRem(8);
+        @include font-st(toRem(14), $black, $fw-b);
+      }
+      .modal-body {
+        padding-bottom: toRem(32);
+        width: calc(100% - 42px);
+        margin-left: toRem(21);
+        &.line-type {
+          border-top: 1px solid $gray5;
+          padding: toRem(0) toRem(0) toRem(32);
+        }
+      }
+      .modal-footer {
+        padding: 0;
+        border: none;
+        & > * {
+          margin: 0;
+        }
+        .btn-group-cta {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.sc-modal.m-bottom-modal {
+  .modal-dialog {
+    margin: 0;
+    min-height: toRem(200);
+    height: toRem(200);
+
+    .modal-content {
+      border-radius: toRem(16) toRem(16) 0 0;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      max-height: calc(100% - 4.93rem);
+      .modal-header {
+        justify-content: flex-start;
+        padding: toRem(37) toRem(21) toRem(22);
+        .modal-title {
+          font-size: toRem(16);
+        }
+        .btn-close {
+          opacity: 1;
+          align-self: flex-start;
+        }
+      }
+      .modal-body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-height: toRem(200);
+      }
+      .modal-footer {
+        .btn-group-cta .btn {
+          height: toRem(60);
+        }
+      }
+    }
+  }
+}
+
+/**************/
+%place-info {
+  position: relative;
+  padding-left: toRem(34);
+  min-height: toRem(24);
+  .place-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: toRem(24);
+    height: toRem(24);
+    border: 1px solid #eee;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: toRem(8);
+  }
+  .place-name {
+    @include font-st(1rem, $black);
+    display: inline-block;
+    line-height: toRem(24);
+    word-break: keep-all;
+  }
+}
+.detail-breakdown {
+  .place {
+    @extend %place-info;
+    margin-bottom: toRem(16);
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .price-amount {
+      @include font-st(toRem(24), $black, $fw-b);
+      span {
+        @include font-st(toRem(32), $black, $fw-b);
+        margin-right: toRem(4);
+      }
+    }
+    .card-img {
+      @include small-card-img(false);
+    }
+  }
+}
+
+.breakdown-list-wrap {
+  .breakdown-list {
+    @extend %reset;
+    & li {
+      list-style-type: none;
+    }
+  }
+}
+
+.breakdown-item {
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    .place {
+      @extend %place-info;
+      flex: 0 0 50%;
+    }
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 50%;
+      .detail-price {
+        & > span {
+          display: block;
+          text-align: right;
+          line-height: 1;
+          margin: toRem(5) 0;
+        }
+        .origin-price {
+          color: $gray3;
+        }
+      }
+      .card-img {
+        @include small-card-img(false, toRem(21), toRem(33));
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .item-info-list {
+    padding-left: toRem(34);
+    font-size: 0;
+    margin-top: toRem(10);
+    & > li > span {
+      @include detail-info;
+    }
+    & > li:not(:first-child) {
+      margin-top: toRem(4);
+    }
+  }
+}
+
+/* 카드 */
+.card-info-wrap {
+  .card-info {
+    padding-right: 50px;
+    position: relative;
+    .card-name {
+      .card-tit {
+        display: flex;
+        align-items: center;
+        .sc-tit {
+          @include text-shorten(1);
+          max-width: 100%;
+          font-size: toRem(16);
+          font-weight: bold;
+        }
+      }
+      .card-img {
+        @include small-card-img(false);
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    .card-detail {
+      margin: toRem(8) 0 0 0;
+      span {
+        @include detail-info($black);
+      }
+    }
+  }
+  &.type02 {
+    .card-info {
+      .card-name {
+        .card-tit {
+          .sc-tit {
+            max-width: calc(100% - 60px);
+          }
+          .badge {
+            margin-left: toRem(8);
+            align-self: center;
+          }
+        }
+        .card-img {
+          @include small-card-img(false, toRem(20), toRem(33));
+        }
+      }
+      .accept-date {
+        margin: toRem(8) 0 0 0;
+        span {
+          @include detail-info;
+        }
+      }
+    }
+  }
+}
+
+/* select */
+.select-box-wrap {
+  border: 1px solid #dcdcdc;
+  border-radius: 0.75rem;
+  &:focus-within,
+  &.active {
+    border: 2px solid #2090ff;
+    .selected-item {
+      padding: 15px;
+      padding-right: 11px;
+      .ico {
+        transform: rotate;
+      }
+    }
+    .selected-item + .combo-item-list {
+      display: block;
+    }
+  }
+  .selected-item[aria-expanded='true'] + .combo-item-list {
+    display: block;
+  }
+  .combo-item-list li {
+    font-size: toRem(14);
+    line-height: 1;
+    padding: toRem(8) toRem(15);
+    font-weight: 500;
+    cursor: pointer;
+    &:first-child {
+      margin-top: toRem(-8);
+    }
+    &:last-child {
+      margin-bottom: toRem(16);
+    }
+  }
+}
+
+@media (hover: hover) {
+  .select-box-wrap:hover {
+    border: 2px solid #2090ff;
+    .selected-item {
+      padding: 15px;
+      padding-right: 11px;
+      .ico {
+        transform: rotate;
+      }
+    }
+    .selected-item + .combo-item-list {
+      display: block;
+    }
+    .combo-item-list li:hover {
+      color: $primary;
+    }
+  }
+}
+// 얼럿박스안의 utill
+// 211018 김예리 수정
+.alert-box{
+  &.tc{
+    text-align: center;
+  }
+  .alert-tt {
+    margin-top: 0;
+    margin-bottom: toRem(16);
+    font-weight: bold;
+  }
+  p{
+    font-size: toRem(14);
+    line-height:1.57;
+    & + .btn-group-round {
+      margin-top: toRem(16);
+    }
+  }
+  del {
+    color: #666;
+  }
+  .btn-list-group{
+    > div{
+      & + div{
+        margin-top: toRem(8);
+      }
+    }
+  }
+  .btn-link-sm{
+    &.tell {
+    font-weight: bold !important;
+    font-size: toRem(14) !important;
+    vertical-align: text-bottom;
+  }
+  }
+}
+
+// 라디오박스 커스텀(4개정도 있는데 5번으로 이름 붙이고 하나 더 늘림, 나중에 봐야사스형식으로 붙여야함)
+.phone-list-box {
+  margin-top: toRem(16);
+}
+.phone-list-box .box-wrap .box + .box {
+  margin-top: toRem(8);
+}
+/* Input - Check box */
+.d-grid .form-check {
+  &.custom-t5 {
+    .form-check-label {
+      padding: toRem(16);
+    }
+  }
+}
+
+.form-check {
+  margin-bottom: 0;
+  &.custom-t5 {
+    @include ckd-label($black, transparent, $primary, 2px);
+    padding-left: 0;
+    .form-check-label {
+      @include style-button-outline-select();
+      min-height: toRem(66);
+    }
+    .form-check-input {
+      @include check-blind();
+    }
+  }
+}
+
+.inner-phone-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .inner-name {
+    position: relative;
+    margin-right: toRem(6);
+    padding-right: toRem(6);
+    flex: 0 0 auto;
+  }
+  .inner-name::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: toRem(-6);
+    width: 1px;
+    height: toRem(12);
+    background-color: #e2e5eb;
+  }
+  .inner-num > span {
+    & + span {
+      margin-top: toRem(6);
+    }
+  }
+  .inner-num em {
+    font-weight: bold;
+  }
+}
+
+// 리셋
+table caption {
+  display: none;
+}
+
+//우리의 가이드:guide_ui/index.html
+.guide-content {
+  padding-top: toRem(50);
+}
+.ours-guide.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+}
+.ours-guide.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+.ours-guide.navbar a:hover {
+  color: yellow;
+}
+.ours-guide.navbar .navbar-collapse {
+  display: none;
+  position: absolute;
+  top: toRem(36);
+  right: 0;
+  left: 0;
+}
+.ours-guide.navbar .navbar-collapse.show {
+  display: block;
+}
+.ours-guide.navbar .navbar-nav {
+  padding: toRem(10);
+  background-color: #000;
+}
+.ours-guide.navbar .navbar-toggler {
+  position: relative;
+  width: toRem(20);
+  height: toRem(20);
+}
+.ours-guide.navbar .navbar-toggler:before,
+.ours-guide.navbar .navbar-toggler:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 3px;
+  background-color: #000;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.ours-guide.navbar .navbar-toggler:before {
+  margin-top: toRem(-3);
+}
+.ours-guide.navbar .navbar-toggler:after {
+  margin-top: toRem(3);
+}
+@media screen and (min-width: 1024px) {
+  .ours-guide.navbar {
+    justify-content: flex-start;
+  }
+  .ours-guide.navbar .navbar-collapse {
+    display: block;
+    position: relative;
+    top: 0;
+  }
+  .ours-guide.navbar .navbar-nav {
+    margin-left: toRem(20);
+    background-color: transparent;
+  }
+  .ours-guide.navbar .navbar-nav .nav-item {
+    display: inline-block;
+    margin: 0 toRem(3);
+  }
+  .ours-guide.navbar .navbar-toggler {
+    display: none;
+  }
+}
+
+// 모듈(MDCmnPageLabel001.css)에 추가할 css
+.page-title .sub_text .info-desc{font-size:toRem(16); color:$blue2;}
+.sub_text .info-desc .ico{margin-right:toRem(6);} //211026 김예리 수정 (뷰단요청으로 .page-title 삭제)
+
+
+// 장기대출 상환방법(PGHPPCPFinanceCardloanApplyInputRepaymentOptionTypeB001.html 하드코딩영역)
+.loan-repayment-method .amount-dl{padding-top:0!important;}
+.loan-repayment-method > div + div{margin-top:toRem(24);}
+.loan-repayment-method .lrm-txtbox{font-size:toRem(14); color:#555;}
+// -----------------------------------------------------------------------------
+// 명세서
+// -----------------------------------------------------------------------------
+.modal-mystatement{
+  .check-item{
+    & + .check-item {
+      margin-top: toRem(24);
+    }
+    .form-check-label {
+      margin-left: toRem(8);
+    }
+  }
+}
+
+.inner-ico-select {
+  display: flex;
+  .ico {
+    margin-right: toRem(8);
+  }
+}
+//
+.btn-full-lg{
+  .btn-contained{
+    .txt{
+      &.text-gray2{
+        margin-top:toRem(12);
+        line-height: 1.57;
+        font-weight:normal;
+      }
+      & + .txt{
+        margin-top:toRem(8);
+      }
+    }
+  }
+  &.type2{
+    .btn-contained{
+      padding:toRem(24) toRem(24) toRem(24) toRem(48);
+    }
+    .tit{
+      overflow: inherit;
+      position: relative;
+      .ico{
+        position:absolute;
+        left:toRem(-32);
+        top:0;
+      }
+    }
+    dl{
+      margin-top:toRem(6);
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-items: center;
+        line-height: 1.57;
+      }
+      dt{
+        font-size:toRem(14);
+      }
+      dd{
+        margin-left:toRem(5);
+        font-size:toRem(14);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.form-wrap-idnumber{
+  .form-colbox{
+    .dash{
+      width:toRem(36);
+      text-align:center;
+      line-height:toRem(50);
+      &:after{
+        content:'';
+        display:inline-block;
+        width:toRem(12);
+        height:toRem(2);
+        background-color: $gray4;
+        vertical-align: middle;
+      }
+    }
+    .long-type{
+      flex:1.4;
+    }
+  }
+}
+
+.dot-list{
+  li{
+    .dash-list{
+      margin-top:toRem(8);
+    }
+  }
+}
+
+.dash-list{
+  li{
+    &:before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: toRem(10);
+      left: 0;
+      width: toRem(4);
+      height: 1px;
+      border-radius: 100%;
+      background-color: $gray2;
+    }
+    & + li{
+      margin-top:toRem(8);
+    }
+  }
+}
+
+.btn-link-txt {
+  @extend %btn-font-style6;
+  @extend %btn-link-style;
+  color: $primary;
+  text-decoration: underline;
+  vertical-align: baseline;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $blue3;
+  }
+  &:disabled,
+  &.disabled {
+    color: $gray4;
+    .ico {
+      background-color: $gray4;
+    }
+  }
+}
+
+.repayment-noti{
+  .tit{
+    font-size:$fn-sm;
+    font-weight: bold;
+    color:$black;
+  }
+  .sub-tit{
+    display:block;
+    margin-top:toRem(6);
+    font-size:toRem(14);
+    color:$black;
+  }
+  dl{
+    margin-top:toRem(24);
+    dt{
+      font-size:toRem(14);
+      color:$black;
+    }
+    dd{
+      margin-top:toRem(8);
+      margin-left:0;
+      font-size:$fn-sm;
+      color:$black;
+      font-weight: bold;
+    }
+  }
+  .txt{
+    display:block;
+    margin-top:toRem(16);
+    font-size:toRem(14);
+    color:$gray2;
+    line-height: 1.57;
+  }
+  & + .repayment-noti{
+    margin-top:toRem(24);
+  }
+}
+
+.text-gray{
+  color:$gray1;
+  line-height: 1.57;
+  & + .text-gray{
+    margin-top:toRem(8);
+  }
+}
+.btn-round-blue2{
+  &:disabled{
+    &:hover{
+      color:$gray3;
+    }
+  }
+}
+
+.auto-value{
+  @extend %number-type;
+  display:flex;
+  flex-grow:1;
+  font-size:toRem(20);
+  line-height:toRem(52);
+  color:$gray4;
+  .line-through{
+    padding-left:toRem(6);
+    display: inline-block;
+    text-decoration:line-through;
+    font-size:$fn-sm;
+  }
+  & + .ipt-unit{
+    color:$gray4;
+  }
+}

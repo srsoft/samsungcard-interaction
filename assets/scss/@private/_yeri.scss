@@ -1,0 +1,162 @@
+// -----------------------------------------------------------------------------
+// private style (kimyeri
+// -----------------------------------------------------------------------------
+
+.fast_check_wrap{
+  margin-top:toRem(64);
+  .form_check_group{
+    &.type_1{
+      .form_check_label{
+        font-weight: 500;
+        line-height: 1.43;
+        padding:toRem(8) toRem(12);
+      }
+    }
+  }
+}
+
+.noti_wrap{
+  .title-wrap {
+    margin-top:toRem(32);
+    + .title-wrap {
+      margin-top:toRem(24);
+    }
+    &:first-of-type{
+      margin-top:0;
+    }
+  }
+  .txt_list,
+  .wcms_txt_list{
+    &.type_dot{
+      margin-top:toRem(16);
+      li{
+        + li{
+          margin-top:toRem(16);
+        }
+      }
+    }
+    &.type_dash{
+      margin-top:toRem(16);
+    }
+  }
+  .tbl_info{
+    th,
+    td{
+      padding:toRem(16) toRem(6);
+      vertical-align: middle;
+    }
+  }
+}
+
+.info_detail{
+  .card-type{
+    .card-txt{
+      .card-tit{
+        font-size:toRem(20);
+      }
+    }
+  }
+  .dlist_wrap{
+    margin-top:toRem(16);
+  }
+  .btn_group_round{
+    margin-top:toRem(32);
+  }
+}
+
+.card_type_wrap{
+  border-top: 1px solid $gray5;
+  padding-top:toRem(32);
+  //padding-bottom:toRem(34);
+  li{
+    padding-top:toRem(24);
+    &:first-child{
+      padding-top:0;
+    }
+  }  
+}
+
+.dlist_detail{
+  .disp-info.num-unit02{
+    margin:0;
+    padding-bottom:toRem(16);
+    border-bottom:1px solid $gray5;
+    .disp-box{
+      .detail-disp{
+        margin-bottom:toRem(6);
+        .detail{
+          font-size:toRem(16);
+        }
+      }
+    }
+    + .d_col{
+      margin-top:toRem(33);
+    }
+  }
+}
+
+.accordion{
+  .accordion_body{
+    .dlist_wrap{
+      .dlist_detail{
+        dd{
+          .price-amount{
+            display:block;
+            flex:1 0 100%;
+            font-size:toRem(16);
+            + .price-amount{
+              margin-top:toRem(9);
+            }
+          }
+        }
+      }
+      + .btn_group,
+      + .btn_group_round{
+        margin-top:toRem(24);
+      }
+    }
+  } 
+}
+
+.disp-info.num-unit03{
+  position: relative;
+  .detail-disp{
+    display:block;
+    margin-bottom:toRem(6);
+    .detail{
+      color:#666;
+    }
+  } 
+  .price-disp{
+    .price-amount{
+      font-size:toRem(16);
+    }
+  }
+  .form_switch{
+    position:absolute;
+    right: 0;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  + .disp-info{
+    margin-top:toRem(26);
+  }
+}
+
+.detail_disp{
+  dt{
+    span{
+      + span{
+        &:before{
+          content:'';
+          margin-right:toRem(6);
+          display:inline-block;
+          width:1px;
+          height:toRem(16);
+          background-color: $gray5;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

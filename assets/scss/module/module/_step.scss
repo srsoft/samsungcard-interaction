@@ -1,0 +1,226 @@
+//#########################################################################################
+// Module step
+//#########################################################################################
+
+.step_box {
+   position: relative;
+  .tit {
+    display: block;
+    margin-bottom: toRem(35);
+    font-size: toRem(16);
+    color: $black;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      flex: 1;
+      color: $gray4;
+      font-size: toRem(14);
+      text-align: center;
+      position: relative;
+      white-space:nowrap;
+      word-break: normal;
+      > span{
+        z-index: 5;
+        background-color: $white;
+        position: relative;
+        padding:0 toRem(10);
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        border-width: 2px 0 0 0;
+        border-color:$gray4;
+        border-style: dotted;
+        position: absolute;
+        top: 50%;
+        left:-50%;
+      }
+      &:first-child {
+        text-align: left;
+        &::after {
+          display:none;
+        }
+        > span{
+          padding-left: 0;
+        }
+      }
+      &:last-child{
+        text-align: right;
+        > span{
+          padding-right: 0;
+        }
+      }
+      &.is_active {
+        color: $blue2;
+      }
+      &.is_complete {
+        color: $black;
+        &::after {
+          border-color:$black;
+        }
+        + .is_active{
+          &::after {
+            border-color:$black;
+          }
+        }
+      }
+    }
+  }
+  + .status_box {
+    margin-top: toRem(25);
+  }
+  .img_area {
+    width: toRem(20);
+    height: toRem(32);
+    position: absolute;
+    right: toRem(16);
+    top: toRem(32);
+  }
+  &.type_1{
+    @include bd-radius(toRem(12));
+    border: 1px solid $gray5;
+    padding: toRem(32) toRem(16);
+    margin-top: toRem(16);
+    ul{
+      li{
+        display: grid;
+        &:first-child,
+        &:last-child{
+          text-align: center;
+        }
+        [class^="step_"] {
+          display: none;
+        }
+        > span{
+          z-index: inherit;
+          padding:0;
+        }
+        &::before {
+          content: "";
+          margin: toRem(6) auto toRem(19);
+          width: toRem(12);
+          height: toRem(12);
+          border-radius: 50%;
+          display: block;
+          background-color: $gray4;
+          z-index: 1;
+        }
+        &::after {
+          top: toRem(12);
+          border-width: 1px 0 0 0;
+          border-style: solid;
+        }
+        &:first-child {
+          &::after {
+            display:none;
+          }
+        }
+        &.is_active {
+          [class^="step_"] {
+            display: block;
+            margin: 0 auto toRem(13);
+            width: toRem(36);
+            height: toRem(24);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: toRem(-18);
+            z-index: 1;
+          }
+          .step_receipt {
+            background: $white url("#{$img-src}/icon/icon-step-apply@2x.png") no-repeat center;
+            background-size: auto 100%;
+          }
+          .step_prog {
+            background: $white url("#{$img-src}/icon/icon-step-apply-searching@2x.png") no-repeat center;
+            background-size: auto 100%;
+          }
+          .step_deliv {
+            background: $white url("#{$img-src}/icon/icon-step-truck@2x.png") no-repeat center; background-size: auto 100%;
+          }
+          .step_comp {
+            background: $white url("#{$img-src}/icon/icon-step-card-confirm@2x.png") no-repeat center;
+            background-size: auto 100%;
+          }
+          .step_return {
+            background: $white url("#{$img-src}/icon/icon-step-card-back@2x.png") no-repeat center;
+            background-size: auto 100%;
+          }
+        }
+        &.is_complete {
+          &::before {
+            border: toRem(3) solid $black;
+            background-color: $white;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+  &.type_2{
+    
+  }
+  &.type2{
+    ul{
+      li{
+        color:$black;
+      }
+    }
+  }
+}
+
+.step-guide-box{
+  .list-group.type_1{
+    .list-group-item{
+      .txt{
+        font-size:toRem(14);
+        font-weight: normal;
+        line-height: 1.57;
+      }
+      .date_txt{
+        margin-top:toRem(5);
+        font-size:toRem(14);
+        font-weight: normal;
+        color:$gray2;
+      }
+      &::before {
+        content: "";
+        width: toRem(12);
+        height: toRem(12);
+        border-radius: 50%;
+        display: block;
+        background-color: $gray4;
+        z-index: 2;
+        position:absolute;
+        left:toRem(6);
+        top:toRem(6);
+        box-sizing: border-box;
+      }
+      &::after{
+        border-left:1px solid $gray4;
+        left:toRem(11);
+        top:toRem(18);
+        height: 100%;
+      }
+      &.is_complete{
+        &::before{
+          background-color: $white;
+          border:3px solid $black;
+          border-radius: 50%;
+        }
+        // &::after{
+        //   border-left:1px solid $black;
+        // }
+      }
+      &:first-child{
+        &::after{
+          top:toRem(24);
+          height:calc(100% - 18px);
+        }
+      }
+    }
+  }
+}
+

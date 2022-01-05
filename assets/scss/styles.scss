@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// SASS Setting (21.10.14)
+// -----------------------------------------------------------------------------
+// variable
+@import 'base/_variable';
+@import 'base/_mixin';
+
+// base
+// @import 'base/_fonts';
+@import 'base/_reset';
+
+// layout
+@import 'layout/_header';
+@import 'layout/_footer';
+@import 'layout/_container';
+@import 'layout/_modal';
+@import 'layout/_popup';
+@import 'layout/_common';
+
+// worklist
+@import 'guide';
+
+// wcms
+@import 'wcms';
+
+// AS-IS
+// -----------------------------------------------------------------------------
+// _bt.scss
+//   * bootstrap의 일부 스타일 정의
+//   * 아래의 페이지에 대한 스타일 정의 (21.10.14)
+//   * `[카드이용 - 명세서]` `[금융 - 장기대출]` `[금융 - 단기대출]`
+// -----------------------------------------------------------------------------
+@import 'page/_bt';
+
+// private
+@import '@private/_haneul';
+@import '@private/_hyanghoon';
+@import '@private/_millim';
+@import '@private/_yoojin';
+// @import '@private/_yw';
+@import '@private/_yeri';
+@import '@private/_lsh';
+
+// module
+@import 'module/_dev';
+@import 'module/_element';
+@import 'module/_module';
+
+
+// swiper
+@import 'module/ui/swiper/swiper.scss';
+// page
+
+
+// @import 'interaction/flickity.scss';

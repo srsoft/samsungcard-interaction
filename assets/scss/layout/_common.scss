@@ -1,0 +1,187 @@
+
+
+/*
+  font color
+  fcA~ : 무채색
+  fcB~ : 블루 계열
+  fcC~ : 레드 계열
+*/
+.fcA1 {
+  color:#111111 !important;
+}
+.fcA2 {
+  color:#333333 !important;
+}
+.fcA3 {
+  color:#666666 !important;
+}
+.fcA4 {
+  color:#999999 !important;
+}
+.fcA5 {
+  color:#cccccc !important;
+}
+.fcA6 {
+  color:#ffffff !important;
+}
+
+.fcB1 {
+  color:#0080FF !important;
+}
+.fcB2 {
+  color:#1065D9 !important;
+}
+.fcB3 {
+  color:#2090ff !important;
+}
+.fcC1 {
+  color:#E60000 !important;
+}
+
+// font-weight
+.fwNor {font-weight:normal !important;}
+.fwBld {font-weight:bold !important;}
+
+
+// font-size
+.mdTitle1 {
+  font-size: toRem(32) !important;
+}
+.mdTitle2 {
+  font-size: toRem(24) !important;
+}
+.mdTitle3 {
+  font-size: toRem(24) !important;
+  line-height:toRem(36) !important;
+}
+.mdTitle4 {
+  font-size: toRem(20) !important;
+}
+.mdTitle5 {
+  font-size: toRem(16) !important;
+}
+.mdTitle6 {
+  font-size: toRem(14) !important;
+}
+
+.mdText1 {
+  font-size: toRem(16) !important;
+  font-weight:bold;
+}
+.mdText2 {
+  font-size: toRem(16) !important;
+}
+.mdText3 {
+  font-size: toRem(14) !important;
+}
+.mdText4 {
+  font-size: toRem(14) !important;
+  line-height: toRem(22) !important;
+}
+.mdText5 {
+  font-size: toRem(13) !important;
+}
+
+
+
+
+
+
+.ready {
+  margin: toRem(20) toRem(0);
+  padding: toRem(10) toRem(10);
+  text-align: center;
+
+  border-radius:20px;
+  height:120px;
+  background-color:#DDD;
+  &.none {
+    margin: 0;
+  }
+  
+}
+
+
+
+
+
+/* margin */
+.mg-0 {
+  margin-top:0 !important;
+}
+.mg-1 {
+  margin-top: 0.375rem !important;
+}
+.mg-2 {
+  margin-top: 0.75rem !important;
+}
+.mg-3 {
+  margin-top: 1rem !important;
+}
+.mg-4 {
+  margin-top: 1.5rem !important;
+}
+.mg-5 {
+  margin-top: 2rem !important;
+}
+.mg-6 {
+  margin-top: 2.625rem !important;
+}
+.mg-7 {
+  margin-top: 3.25rem !important;
+}
+.mg-8 {
+  margin-top: 4rem !important;
+}
+
+.pdT0{
+  padding-top:0 !important;
+}
+
+.pdB0{
+  padding-bottom:0 !important;
+}
+
+
+
+
+
+.blind {
+    display:none;
+}
+.hidden {
+    visibility: hidden;
+    overflow: hidden;
+    position:absolute;
+    width:1px;
+    height:1px;
+    clip: rect(1px);
+    text-indent:-9999em;
+    color: transparent;
+    background: transparent;
+}
+
+.t_align_center {text-align: center;}
+.t_align_left {text-align: left;}
+.t_align_right {text-align: right;}
+
+.v_align_top {vertical-align: top;}
+.v_align_middle {vertical-align: middle;}
+.v_align_bottom {vertical-align: bottom;}
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 90;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+}

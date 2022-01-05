@@ -1,0 +1,676 @@
+// -----------------------------------------------------------------------------
+// # form_ctrl
+// * 21.11.02
+// * kimyoojin
+// -----------------------------------------------------------------------------
+
+
+@mixin inputReset(){
+  appearance: none;
+  vertical-align: middle;
+}
+
+.form_switch{
+  font-size: 0;
+  cursor: pointer;
+  .switch_label{
+    display: inline-block;
+    font-size: toRem(16);
+    color: #111;
+    margin-right: 8px;
+    vertical-align: middle;
+    line-height: 1.375rem;
+    word-break: keep-all;
+    cursor: inherit;
+  }
+  .switch_ipt{
+    @include inputReset();
+    background: #e2e5eb no-repeat center left / contain;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
+    border-radius: toRem(12);
+    width: toRem(42);
+    height: toRem(24);
+    margin: 0;
+    transition: background-position .3s;
+    cursor: inherit;
+    &:checked{
+      background-color: #2090ff;
+      background-position: center right;
+    }
+  }
+  &.is_disabled{
+    opacity: .5;
+    cursor: default;
+    .switch_ipt{
+      pointer-events: none;
+    }
+  }
+}
+
+// SCtextSwitches
+.switch_box{
+  position: relative;
+  background-color: #f4f6fb;
+  border-radius: 12px;
+  min-height: 68px;
+  padding: 24px 16px;
+  .tit{
+    line-height: 1.57;
+    font-size: toRem(16);
+    @include ellipse();
+  }
+  .txt{
+    line-height: 1.57;
+    margin-top: 14px;
+    font-size: toRem(14);
+    color: #666;
+  }
+  .form_switch{
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
+}
+
+
+// form_combobox
+.form_combobox{
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  width: 100%;
+  font-size: toRem(14);
+  .combo_value{
+    width: 100%;
+    padding: 16px 36px 16px 16px;
+    font-size: inherit;
+    text-align: left;
+    @include ellipse();
+    .common-expand-more-m{
+      position: absolute;
+      top: 16px;
+      right: 12px;
+      background-color: #111;
+      transition: all .3s;
+    }
+  }
+  .combo_list{
+    position: relative;
+    display: none;
+    width: 100%;
+    margin-top: -51px;
+    max-height: 228px;
+    padding: 8px 48px 8px 0;
+    overflow-y: auto;
+    .btn_txt{
+      background: #fff;
+      width: 100%;
+      padding: 8px 0px 8px 16px;
+      font-size: inherit;
+      text-align: left;
+      &[aria-selected="true"]{
+        color: #2090ff;
+      }
+      span{
+        @include ellipse(2);
+      }
+    }
+  }
+  &.is_active{
+    border-color: #2090ff;
+    .common-expand-more-m{
+      transform: rotate(180deg);
+    }
+    .combo_list{
+      display: block;
+    }
+  }
+}
+//SCFormCheckGroup
+.form_check{
+  position: relative;
+  display: flex;
+  .form_check_input[type="radio"]{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='1.5' fill='%23ffffff'/%3e%3c/svg%3e");
+  }
+  .form_check_input[type="checkbox"]{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  }
+  .form_check_input{
+    appearance: none;
+    vertical-align: middle;
+    flex-shrink: 0;
+    background: #dcdcdc no-repeat center / contain;
+    border-radius: toRem(10);
+    width: toRem(20);    
+    height: toRem(20);
+    margin: 0;
+    transition: background-color .3s;
+    vertical-align: middle;
+    &:checked{
+      background-color: #2090ff;
+    }
+    &:disabled{
+      background-color: #e9e9e9;
+    }
+  }
+  .form_check_label{
+    display: inline-block;
+    margin-left: 8px;
+    line-height: 1;
+    font-size: inherit;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  &.is_disabled{
+    .form_check_input{
+      background-color: #e9e9e9;
+    }
+    .form_check_input[type="radio"]{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='1.5' fill='%23dcdcdc'/%3e%3c/svg%3e");
+    }
+    .form_check_input[type="checkbox"]{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23dcdcdc' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    }
+    .form_check_label{
+      color: #999;
+      cursor: default;
+    }
+  }
+}
+
+.form_check_group{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  .item{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &.group_1,
+  &.group_2,
+  &.group_3,
+  &.group_4,
+  &.group_5{
+    .item > .form_check{
+      width:100%;
+      height: 100%;
+    }
+    .form_check_label{
+      width: 100%;
+    }
+  }
+  &.group_1{
+    .item{
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+  &.group_2{
+    .item{
+      flex-basis: 50%;
+      width: 50%;
+    }
+  }
+  &.group_3{
+    .item{
+      flex-basis: 33.3333%;
+      width: 33.3333%;
+    }
+  }
+  &.group_4{
+    .item{
+      flex-basis: 25%;
+      width: 25%;
+    }
+  }
+  &.group_5{
+    .item{
+      flex-basis: 20%;
+      width: 20%;
+    }
+  }
+  &.type_group{
+    .item{
+      width: 100%;
+    }
+    .form_check_label{
+      width: 100%;
+    }
+  }
+}
+
+.form_check_group.type_1{
+  margin-left: -2px;
+  margin-right: -2px;
+  font-size: toRem(14);
+  .item{
+    width: inherit;
+    padding: 2px;
+  }
+  .form_check_input{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .form_check_label{
+    background-color: #f4f6fb;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    margin:0;
+    padding: 10px 12px;
+    color: #111111;
+    font-weight: bold;
+    text-align: center;
+  }
+  .form_check_input:checked+.form_check_label{
+    background-color: transparent;
+    border-color :#2090ff;
+    color :#2090ff;
+  }
+  .is_disabled{
+    .form_check_label {
+      background: #e9e9e9;
+      border-color: #e9e9e9;
+      color: #999
+    }
+  }
+}
+
+.form_check_group.type_2{
+  margin-left: -2px;
+  margin-right: -2px;
+  font-size: toRem(14);
+  .item{
+    width: inherit;
+    padding: 2px;
+  }
+  .form_check_input{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .form_check_label{
+    background-color: transparent;
+    border: 2px solid #e2e5eb;
+    border-radius: 0.5rem;
+    margin:0;
+    padding: 10px 12px;
+    color: #111111;
+    text-align: center;
+  }
+  .form_check_input:checked+.form_check_label{
+    border-color :#2090ff;
+    color :#2090ff;
+  }
+  .is_disabled{
+    .form_check_label {
+      background: #e9e9e9;
+      border-color: #e9e9e9;
+      color: #999
+    }
+  }
+}
+
+.form_check_group.type_3{
+  margin-left: -6px;
+  margin-right: -6px;
+  .item{
+    width: 100%;
+    padding: 6px;
+  }
+  .form_check_input{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .form_check_label{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    border: 1px solid #e2e5eb;
+    border-radius: 12px;
+    width: 100%;
+    line-height: 1.25;
+    margin:0;
+    padding: 24px 16px;
+  }
+  .form_check_input:checked+.form_check_label{
+    border-color :#2090ff;
+    border-width: 2px;
+  }
+  .is_disabled{
+    .form_check_label {
+      background: #f9fafc;
+      border-color: #e9e9e9;
+      .ico{
+        opacity: .5;
+      }
+      span, em{
+        color: #999
+      }
+    }
+  }
+  
+}
+
+.form_check_group.type_4{
+  margin-left: -6px;
+  margin-right: -6px;
+  .item{
+    padding: 6px;
+  }
+  .form_check_input{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .form_check_label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #e2e5eb;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 5.0625rem;
+    line-height: 1.25;
+    margin:0;
+    padding: 10px 0;
+    text-align: center;
+    color: #111111;
+    .inner-select-square {
+      width: 100%;
+      .txt{
+        width: 100%;
+        @include ellipse(2);
+      }
+    }
+  }
+  .form_check_input:checked+.form_check_label{
+    border-color :#2090ff;
+    border-width: 2px;
+    color: #0080ff;
+  }
+  
+  .is_disabled{
+    .form_check_label {
+      background: #f9fafc;
+      border-color: #e9e9e9;
+      .ico{
+        opacity: .5;
+      }
+      span, em{
+        color: #999
+      }
+    }
+  }
+}
+
+.form_check_group.type_5{
+  margin-left: -6px;
+  margin-right: -6px;
+  .item{
+    width: 100%;
+    padding: 6px;
+  }
+  .form_check_input{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .form_check_label{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e2e5eb;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 66px;
+    line-height: 1.25;
+    margin:0;
+    padding: 24px 16px;
+    color: #111111;
+
+  }
+  .form_check_input:checked+.form_check_label{
+    border-color :#2090ff;
+    border-width: 2px;
+  }
+  
+  .is_disabled{
+    .form_check_label {
+      background: #f9fafc;
+      border-color: #e9e9e9;
+      span, em{
+        color: #999
+      }
+    }
+  }
+}
+
+.form_check_group.type_6{
+  margin-left: -6px;
+  margin-right: -6px;
+  .item{
+    width: 100%;
+    padding: 6px;
+  }
+  .form_check_input{
+    position: absolute;
+    left: 18px;
+    top: 28px;
+  }
+  .form_check_input[type="radio"]{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  }
+  .form_check_label{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #e2e5eb;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 90px;
+    line-height: 1.25;
+    margin:0;
+    padding: 26px 16px 26px 48px;
+    color: #111111;
+    .inner-text{
+      flex:1;
+    }
+    .txt{
+      line-height: 1.57;
+    }
+  }
+  .form_check_input:checked{
+    & +.form_check_label{
+      border-color :#2090ff;
+      border-width: 2px;
+    }
+  }
+  .is_disabled{
+    .form_check_input[type="radio"]{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23dcdcdc' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    }
+    .form_check_label {
+      background: #f9fafc;
+      border-color: #e9e9e9;
+      img{
+        opacity: .5;
+      }
+      span, em{
+        color: #999
+      }
+    }
+  }
+}
+
+.type_icon_area .inner-text{
+  display: flex;
+  align-items: center;
+  flex:1;
+  justify-content: space-between;
+  .ico_area{
+    margin-top:0;
+    .ico{
+      width:toRem(24);
+      height:toRem(24);
+      border:2px solid $white;
+      float: right;
+      margin-left:toRem(-4);
+      border-radius: 50%;
+    }
+    .num{
+      float: right;
+      margin-left:toRem(-4);
+      width:toRem(24);
+      height:toRem(24);
+      border-radius: 50%;
+      background-color:#f4f6fb;
+      color:$black;
+      font-size:toRem(12);
+      text-align: center;
+      line-height:toRem(18);
+      font-weight: bold;
+      box-sizing: border-box;
+      border:2px solid $white;
+      z-index: 5;
+      em{
+        color:#0080FF;
+      }
+    }
+  }
+}
+
+// 약관
+.form-checkbox {
+  border: 1px solid $gray5;
+  border-radius: 12px;
+  padding: 16px;
+  &.is_checked{
+    .checkbox-header {
+      padding-bottom: 8px;
+    }
+    .checkbox-body{
+      display: none;
+    }
+  }
+  .form_check {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .checkbox-header {
+    display: flex;
+    justify-content: space-between;
+    padding:8px 0 16px;
+    .form_check{
+      font-weight: bold;
+    }
+    &:only-child{
+      padding-bottom: 8px;
+    }
+  }
+  .checkbox-body {
+    border-top: 1px solid $gray5;
+    padding-top: 12px;
+    &:only-child{
+      border-top-color: transparent;
+      padding-top: 0;
+    }
+    .check-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .txt{
+      padding: 12px 0;
+      line-height: toRem(22);
+      font-size: toRem(14);
+      color: #666;
+    }
+    .form_check_group{
+      margin: 4px 0;
+    }
+  }
+  .form_check_input {
+    margin-top: 0.125em;
+    margin-right: 8px;
+  }
+  .form_check_label {
+    margin: 0;
+    color: #111;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: toRem(22);
+  }
+  & + .form-checkbox {
+    margin-top: 12px;
+  }
+}
+
+//
+
+.form_check_group.amt-breakdown {
+  .form_check{
+    display: block;
+  }
+  .form_check_label {
+    display: block;
+    min-height: auto;
+    text-align: justify;
+    padding-top: 26px;
+    padding-bottom: 24px;
+  }
+  .cont-selected {
+    display: none;
+    border-radius: 0 0 0.75rem 0.75rem;
+    border: 2px solid transparent;
+    border-top: none;
+    background-color: transparent;
+    padding: 18px 16px 26px;
+    margin-top: -18px;
+    z-index: 2;
+    .dlist_detail {
+      padding-top: toRem(26);
+      border-top: 1px solid $gray5;
+      .d_col {
+        margin-top: toRem(16);
+      }
+    }
+  }
+  .form_check_input:checked + .form_check_label{
+    padding-bottom: 16px;
+  }
+  .form_check_input:checked + .form_check_label +.cont-selected{
+    display: block;
+    color: #111111;
+    background: #ffffff;
+    border-color: #2090ff;
+  }
+}
+
+
+// 모듈 간격
+
+.form_check_group.type_3.amt-breakdown .dlist_detail{
+  font-size: 14px;
+}
+.form_check_group.type_3 .detail_info2{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  .tit_wrap dl dt{
+    color: inherit
+  }
+}
+
+.form_ctrl .title-wrap .form_check{
+  .form_check_label > span{
+    height: 100%;
+    font-size: inherit
+  }
+}

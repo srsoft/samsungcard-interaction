@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// # badge
+// * 21.11.02
+// * kimyoojin
+// -----------------------------------------------------------------------------
+.badge{
+  display: inline-block;
+  padding: toRem(5) toRem(8);
+  font-size: toRem(12);
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: toRem(28);
+  min-width: toRem(37);
+  font-weight: $fw-r;
+  font-style: normal;
+  &.primary{  
+    background-color: $blue;
+  }
+  &.secondary{
+    background-color: $gray3;
+  }
+  &.danger{
+    background-color: $red1;
+  }
+  &.info{
+    background-color: #54c77d;
+  }
+}

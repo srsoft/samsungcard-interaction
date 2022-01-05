@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// common mixin
+// -----------------------------------------------------------------------------
+// px to rem
+@function toRem($target) {
+  @return $target * 0.0625rem;
+}
+
+// text ellipsis
+@mixin ellipse($line : 1){
+  @if ($line == 1){
+    display: block;
+    white-space: nowrap;
+  }
+  @else{
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    white-space: inherit;
+  }
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}

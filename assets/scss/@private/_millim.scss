@@ -1,0 +1,508 @@
+// -----------------------------------------------------------------------------
+// private style (sonmillim
+// -----------------------------------------------------------------------------
+
+// 아이콘 준비중
+.ico.ico_ready {
+  margin-right: 6px;
+  min-width: 30px;
+  height: 12px;
+  background-color: #888;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.bank-no {
+  background-color: #d8d8d8;
+  border-radius: 50%;
+}
+
+.ls_agree_area {
+  .agree_stickybox {
+    &.is_sticky {
+      display: block;
+    }
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: toRem(16) toRem(21);
+    background-color: #fff;
+    border-bottom: 1px solid #e2e5eb;
+    z-index: 1040;
+    .checklinebox {
+      padding: toRem(16) toRem(24);
+      border: 1px solid #e2e5eb;
+      border-radius: toRem(12);
+    }
+  }
+  .agree_checkbox {
+    border: 1px solid #e2e5eb;
+    .agree_cont {
+      padding: toRem(14) toRem(17) toRem(24);
+      dl {
+        > div + div {
+          margin-top: toRem(16);
+        }
+        .b_line {
+          padding-bottom: toRem(16);
+          border-bottom: 1px solid #e2e5eb;
+        }
+        font-size: toRem(14);
+        color: #666666;
+        line-height: toRem(22);
+      }
+    }
+    .agree_chec {
+      padding: toRem(14) toRem(17);
+      background-color: #f4f6fb;
+      .mdText1 {
+        color: #666666;
+        strong {
+          color: #111111;
+        }
+      }
+      .mdText3 {
+        color: #666666;
+        strong {
+          color: #111111;
+        }
+        & + .form_check_group {
+          margin-top: toRem(17);
+        }
+      }
+      .form_check_group {
+        margin-top: toRem(16);
+      }
+    }
+    & + .agree_checkbox {
+      margin-top: toRem(12);
+    }
+  }
+  .mdText3 {
+    font-size: toRem(14);
+    line-height: toRem(22);
+  }
+  .mdTitle3 {
+    margin-bottom: toRem(32);
+  }
+  .mdTitle4 + .mdText3 {
+    margin-top: toRem(16);
+  }
+  .mdTitle4 + .agree_table1 {
+    margin-top: toRem(16);
+  }
+  .agree_table1 + .mdTitle4 {
+    margin-top: toRem(32);
+  }
+  .mdTitle4 + .agree_checkbox {
+    margin-top: toRem(16);
+  }
+  .mdText3 + .mdTitle4 {
+    margin-top: toRem(52);
+  }
+  .agree_checkbox + .mdTitle4 {
+    margin-top: toRem(52);
+  }
+  .agree_table1 {
+    width: 100%;
+    border-top: 1px solid #e2e5eb;
+    tbody {
+      th {
+        padding: toRem(13);
+        padding-left: 0;
+        font-size: toRem(16);
+        line-height: toRem(24);
+        color: #111111;
+        text-align: left;
+        width: toRem(144);
+        border-bottom: 1px solid #e2e5eb;
+        vertical-align: top;
+      }
+      td {
+        padding: toRem(13);
+        font-size: toRem(14);
+        line-height: toRem(22);
+        color: #666666;
+        border-bottom: 1px solid #e2e5eb;
+        vertical-align: top;
+        em {
+          margin-bottom: toRem(8);
+        }
+      }
+    }
+  }
+}
+
+.Npay_stickybox {
+  margin-top: toRem(12);
+  position: relative;
+  background-color: #fff;
+  z-index: 1040;
+  .checklinebox {
+    padding: toRem(16) toRem(24);
+    border: 1px solid #e2e5eb;
+    border-radius: toRem(12);
+  }
+}
+
+.ctfct_select {
+  .nocon_dashbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: toRem(148);
+    font-size: toRem(14);
+    color: #999999;
+    border-radius: toRem(12);
+    border: 1px dashed #e2e5eb;
+    text-align: center;
+  }
+}
+
+.password_chec_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  li {
+    padding: 14px;
+    &.check {
+      span {
+        background-color: #000;
+      }
+    }
+    span {
+      display: inline-block;
+      width: toRem(14);
+      height: toRem(14);
+      background-color: #e2e5eb;
+      border-radius: 50%;
+    }
+  }
+}
+
+.btn_group_combi {
+  &.line_solid {
+    [class^="btn_base"] {
+      background-color: #ffffff;
+      border: 1px solid #e2e5eb;
+    }
+    [class^="btn_base"]:active {
+      border: 2px solid #0080ff;
+    }
+    .detail_info dl{
+      color: #666666;
+    }
+  }
+}
+
+.user_photo_area{
+  text-align: center;
+  background-color: #f4f6fb;
+  img{
+    width:100%;
+    max-width: toRem(600);
+  }
+}
+.id_photo_area{
+  text-align: center;
+  img{
+    width:100%;
+    max-width: toRem(600);
+  }
+}
+
+
+//팝업:풀팝업
+.popup-area.open .pop-full {
+  bottom: 0;
+  top: 0;
+}
+.popup-area .pop-full {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: $white;
+  overflow: hidden;
+  -webkit-transition: bottom 0.4s linear;
+  transition: bottom 0.4s linear;
+}
+.popup-area .pop-full .pop-head {
+  position: relative;
+  padding: toRem(30) toRem(20) toRem(16);
+  overflow: hidden;
+}
+.popup-area .pop-full .pop-head.has-line::after {
+  content: "";
+  position: absolute;
+  left: toRem(21);
+  right: toRem(21);
+  bottom: 0;
+  height: 1px;
+  background-color: $gray5;
+}
+.popup-area .pop-full .pop-head .pop-title {
+  margin: 0;
+  font-size: toRem(16);
+  font-weight: bold;
+}
+.popup-area .pop-full .pop-body {
+  min-height: toRem(150);
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+.popup-area .pop-full .pop-body .pop-sec {
+  padding: toRem(30) toRem(21);
+}
+.popup-area .pop-full .pop-body .pop-sec + .pop-sec {
+  border-top: toRem(6) solid $gray6;
+}
+.popup-area .pop-full .pop-foot {
+  overflow: hidden;
+}
+.popup-area .pop-full .btn-group {
+  display: block;
+}
+.popup-area .pop-full .btn-close {
+  position: absolute;
+  padding: 0;
+  right: toRem(16);
+  top: 50%;
+  margin-top: toRem(7);
+  width: toRem(20);
+  height: toRem(20);
+  font-size: 0;
+  border: 0;
+  background: transparent;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.popup-area .pop-full.fixed-foot {
+  padding-bottom: toRem(60);
+}
+.popup-area .pop-full.fixed-foot .pop-foot {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.popup-area .pop-full.fixed-foot .btn-group .btn {
+  min-height: toRem(48);
+}
+.popup-area .pop-full.fixed-head {
+  padding-top: toRem(66);
+}
+.popup-area .pop-full.fixed-head .pop-head {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.popup-area .pop-full.fixed-head .pop-body {
+  max-height: calc(100vh - 66px);
+}
+.popup-area .pop-full.fixed-foot .pop-body {
+  max-height: calc(100vh - 48px);
+}
+.popup-area .pop-full.fixed-head.fixed-foot .pop-body {
+  max-height: calc(100vh - 126px);
+}
+@media screen and (min-width: 1024px) {
+  .popup-area .pop-full {
+    position: fixed;
+    bottom: auto;
+    left: 50%;
+    width: 100%;
+    max-width: toRem(600);
+    background-color: $white;
+    box-sizing: border-box;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+
+
+.inner-text{
+  .tit + dl{
+    margin-top: toRem(6);
+  }
+  dl{
+    & > div{
+      display: flex;
+      align-items: center;
+      line-height: 1.57;
+      color: #666666;
+      dd{
+        margin-left:5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// 모듈 간격
+.title-wrap{
+  & +.form_check_group.type_5{
+    margin-top: toRem(16);
+  }
+}
+
+.ico.color-padlock {
+  background-image: url('#{$img-src}/icon/icon-padlock@2x.png');
+  background-color: transparent;
+}
+
+.ico.ico-pay-card {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: toRem(6);
+  min-width: toRem(30);
+  height: toRem(12);
+  background-color: transparent;
+  background-size: contain;
+  background-position: center center;
+  &.master {background-image: url('#{$img-src}/icon/ico-card-master@2x.png');}
+  &.visa {background-image: url('#{$img-src}/icon/ico-card-visa@2x.png');}
+  &.amex {background-image: url('#{$img-src}/icon/ico-card-amex@2x.png');}
+  &.union {background-image: url('#{$img-src}/icon/ico-card-union@2x.png');}
+}
+
+
+.fixed_amount_area{
+  box-shadow: 0 0 4px rgba(0,0,0,0.35);
+  .dlist_detail{
+    padding:toRem(41) toRem(21) toRem(27);
+    background-color: #ffffff;
+    .d_col{
+      display: block;
+      overflow:hidden;
+      dt{
+        float: left;
+        padding-top:toRem(5);
+        padding-right:toRem(20)
+      }
+      dd{
+        float: right;
+        .price-amount{
+          font-size: toRem(24);
+          .price{
+            font-size: toRem(32); 
+          }
+        }
+      }
+    }
+  }
+  &.overtype{
+    .dlist_detail{
+      .d_col{
+        dd{
+          .price-amount{
+            font-size: toRem(16);
+            .price{
+              font-size: toRem(24); 
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 라운지 프론트비지영역
+.front-benefit-top{
+  position:relative;
+  margin:toRem(-48) toRem(-21) 0;
+  padding:toRem(95) toRem(21) toRem(24);
+  min-height: toRem(329);
+  box-sizing:border-box;
+  overflow:hidden;
+  .frt_util_area{
+    & + .frt_tt_area{
+      margin-top: toRem(24);
+    }
+    position: relative;
+    text-align: right;
+    z-index: 2;
+    .tooltip{
+      .ico{
+        background-color: $white;
+      }
+    }
+  }
+  .frt_tt_area{
+    position: relative;
+    margin-top: toRem(48);
+    text-align: center;
+    z-index: 2;
+    .frt_tx{
+      margin-top: toRem(24);
+      font-size: toRem(14);
+      color:#e2e5eb;
+      line-height: toRem(22);
+    }
+  }
+  .frt_banner_area{
+    position: relative;
+    margin-top:toRem(42);
+    z-index: 2;
+    div + .btn_group_combi{margin-top: toRem(10);}
+  }
+  .frt_bg{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 1;
+  }
+}
+
+// wcms 배너
+.wcms_banner_normal{
+  @include bd-radius(toRem(16));
+  overflow: hidden;
+  > a {
+    display:block;
+    padding:toRem(24) toRem(16);
+    text-decoration: none;
+    position: relative;
+    background-color: $gray6;
+  }
+  .bn_tit{
+    display:block;
+    font-size:toRem(16);
+    color:$black;
+  }
+  .bn_txtsub{
+    margin-top:toRem(6);
+    display: block;
+    width: toRem(180);
+    font-size:toRem(14);
+    line-height: 1.57;
+    color:$gray2;
+  }
+  .img_area{
+    position:absolute;
+    right:0;
+    top:50%;
+    margin-top:toRem(-60);
+    width:toRem(120);
+    height:toRem(120);
+  }
+}
+
+// 페이지타이틀 투명버젼
+.page-hd-wrap.bg_none{
+  background-color:transparent;
+  .page-tit a .ico{
+    background-color: $white;
+  }
+  .page-tit a > span{
+    color: $white;
+  }
+} 
+

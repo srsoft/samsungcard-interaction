@@ -1,0 +1,53 @@
+// ----------------------------------------------------------------
+// popup
+// ----------------------------------------------------------------
+// 푸터 버튼 수정
+.popup-area .pop-layer.fixed-foot {
+  .btn_group button {
+    height: toRem(48);
+    padding: toRem(15) toRem(20);
+    font-weight: $fw-m;
+    line-height: normal;
+    border-radius: 0;
+  }
+  // alert modal 타이틀 수정
+  .alert_box {
+    &.tc {
+      text-align: center;
+    }
+    .alert_tt {
+      margin-top: 0;
+      margin-bottom: toRem(16);
+      font-weight: $fw-b;
+      font-size: $fs-md;
+    }
+  }
+}
+
+.pop-sec{
+  .txt{
+    line-height: 1.5;
+  }
+}
+
+
+.pop-sec {
+  p {
+    & + .form_wrap {
+      padding-top: toRem(24);
+    }
+  }
+  .page_title {
+    margin-top: 0;
+    & + .dlist_detail {
+      margin-top: toRem(52);
+      padding-top: toRem(26);
+      border-top: 1px solid #ddd;
+    }
+  }
+}
+.title-wrap{
+  & + .form_check_group.type_4{
+    margin-top: 16px;
+  }
+}

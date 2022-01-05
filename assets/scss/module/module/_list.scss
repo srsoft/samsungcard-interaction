@@ -1,0 +1,384 @@
+
+//약관리스트영역
+.l_termschecklistArea {
+    .check_item {
+        padding: toRem(24) toRem(16);
+        border: 1px solid #e2e5eb;
+        background-color: #ffffff;
+        border-radius: toRem(12);
+        & + .check_item {
+            margin-top: toRem(12);
+        }
+        .c_head{
+            font-size: toRem(16);
+            font-weight: bold;
+        } 
+        .c_body{
+            margin-top: toRem(16);
+            padding-top: toRem(24);
+            border-top: 1px solid #e2e5eb;
+            .guide{
+                font-size: toRem(14);
+                color:#666666;
+                line-height: toRem(22);
+                & + .itm{
+                    margin-top: toRem(24);
+                }
+                em{
+                    color: #0080ff;
+                }
+                a{
+                    color: #0080ff;
+                    display:inline-block;
+                }
+                .l_dot_list{
+                    &:first-child{
+                        margin-top:0;
+                    }
+                }
+            }
+            .ch_lap{
+                margin-top: toRem(10);
+            }
+            .itm{
+                &:not(:last-of-type){
+                    margin-bottom: toRem(20);
+                }
+                .form_ctrl{
+                    * {
+                        font-size: toRem(14);
+                        font-weight: 400;
+                    }
+                }
+            }
+            
+        }   
+        .itm{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            .form_ctrl{
+                font-size: toRem(0);
+                * {
+                    font-size: toRem(16);
+                    font-weight: bold;
+                }
+            }
+            button{
+                margin-left: toRem(10);
+                font-size: 0;
+                color: transparent;
+                cursor: pointer;
+            }
+        }  
+    } 
+    .out_guide{
+        & + .check_item{
+            margin-top: toRem(24);
+        }
+    }
+}
+
+//카드순위영역
+.l_cardrankinglistArea{
+    padding: toRem(24) toRem(16);
+    border: 1px solid #e2e5eb;
+    background-color: #ffffff;
+    border-radius: toRem(12);
+    .tt_lap{
+        padding-bottom: toRem(16);
+        margin-bottom: toRem(32);
+        border-bottom:1px solid #e2e5eb;
+        strong{
+            font-size: toRem(20);
+            font-weight: bold;
+        }
+    }
+    .bd_lap{
+        .card_ranking_list{
+            li {
+                a {
+                    display:block;
+                    display:flex; 
+                    flex-wrap:nowrap; 
+                    justify-content:space-between;
+                    text-decoration: none;
+                    div:first-child{
+                        position:relative; 
+                        padding-left:toRem(36);  
+                        .tt{
+                            display:block; 
+                            font-size:toRem(16); 
+                            color:#111; 
+                            font-weight:700;
+                        }
+                        .tx{
+                            margin-top:toRem(4); 
+                            display:inline-block; 
+                            font-size:toRem(14); 
+                            color:#666;
+                        }
+                        .ico{
+                            position:absolute; 
+                            left:0; 
+                            top:0; 
+                            display:inline-block; 
+                            width:toRem(24); 
+                            height:toRem(24); 
+                            line-height:toRem(24); 
+                            font-size:toRem(13); 
+                            text-align:center; 
+                            border-radius:50%;
+                            font-style: normal;
+                        }
+                    }
+                    div:last-child{
+                        padding-left: toRem(10);
+                        .crd{
+                            display:inline-block; 
+                            width: toRem(30); 
+                            line-height:0;
+                        }
+                    }
+                }
+                &:nth-child(1) div .ico{background:url("#{$img-src}/icon/circle_01@2x.png") no-repeat; background-size: 100%;color:#6e5601;}
+                &:nth-child(2) div .ico{background:url("#{$img-src}/icon/circle_02@2x.png") no-repeat; background-size: 100%;color:#5e6265;}
+                &:nth-child(3) div .ico{background:url("#{$img-src}/icon/circle_03@2x.png") no-repeat; background-size: 100%;color:#623403;}
+                & + li{
+                    margin-top: toRem(25);
+                }
+            }
+        }
+    }
+}
+
+//카드주도형리스트
+.l_cardlisttype01 { 
+    > li:not(:first-child){
+        margin-top:toRem(50);
+    }
+    .item{
+        position:relative;
+        display: block;
+        padding-left:toRem(90); 
+        min-height:toRem(108);
+        text-decoration: none;
+        .crd{
+            position:absolute; 
+            left:0; 
+            top:0; 
+            display:inline-block; 
+            width:toRem(68);
+        }
+        .tt{
+            display:block;
+            font-size:toRem(20); 
+            color:#111; 
+            font-weight:700;
+        }
+        .tx{
+            position:relative; 
+            margin-top:toRem(8);
+            display:block; 
+            .in_txt{
+              display:block; 
+              font-size:toRem(14); 
+              color:#666; 
+              line-height:toRem(22);
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+        }
+        .badge{
+            margin-top:toRem(12);
+        }
+    }
+}
+
+.l_cardlisttype02{
+    overflow:hidden;
+    li{
+      float:left; 
+      padding:toRem(32) toRem(20) 0;
+      width:50%; 
+      text-align:center; 
+      box-sizing:border-box;
+      .tt{
+        font-size:toRem(16); color:#111; font-weight:700;
+      }
+      .item{
+        display: block;
+        text-decoration: none;
+      }
+      &:nth-child(-n+2){
+        padding-top:0;
+      }
+    }
+}
+
+///아이콘주도형주리스트
+.iconlisttype01_an4{
+    display:flex;
+    flex-wrap: wrap;
+    margin-top:- toRem(24);
+> li{
+    width: 25%;
+    padding: toRem(24) 10px 0;
+    box-sizing:border-box;
+    text-align: center;
+    .item{
+        
+        .ico{
+            display:inline-block;
+            width: toRem(36);
+            height: toRem(36);
+        }
+        .name{
+            display: block;
+            margin-top:toRem(6);
+            font-size: toRem(14); 
+            color: #111111;
+        }
+    }
+}
+}
+.iconlisttype02_an2{
+    overflow:hidden; 
+    margin:toRem(-12) toRem(-6) 0;
+    > li{
+        float:left; 
+        padding:toRem(12) toRem(6) 0; 
+        width:50%; 
+        box-sizing:border-box;
+        .item{
+            padding:toRem(24); 
+            background-color:#f4f6fb; 
+            border-radius:toRem(12); 
+            text-align:center;
+            .tt{
+                display: block;
+                font-size:toRem(16); 
+                color:#111; 
+                font-weight:700;
+            }
+            .ico{
+                & + .tt{
+                    margin-top:toRem(8); 
+                }
+                display:block; 
+                margin:0 auto; 
+                width: toRem(40); 
+                height: toRem(40);
+            }
+        }
+    }
+
+}
+
+//// 박스형리스트
+.l_boxlisttype01{
+    > li{
+        padding: 1.5rem 1rem; 
+        background-color:#f4f6fb; 
+        border-radius: 0.75rem; 
+        box-sizing: border-box;
+        &:not(:last-child){
+            margin-bottom: toRem(10);
+        }
+        .no{
+            font-size: toRem(14);
+            & + .tx{
+                margin-top: toRem(6);
+            }
+        }
+        .tx{
+            display:block;
+            font-size: toRem(16);
+            font-weight: bold;
+        }
+    }
+}
+.l_boxlinelisttype01{
+    > li{
+        .recommend_card{
+            display: block;
+            padding: toRem(24) toRem(16);
+            border: 1px solid #e2e5eb;
+            background-color: #ffffff;
+            border-radius: toRem(12);
+            text-decoration: none;
+            .rc_head {
+                padding-bottom: toRem(24); 
+                margin-bottom: toRem(24); 
+                border-bottom:1px solid #e2e5eb; 
+                font-size:toRem(16); color:#111; font-weight:700;
+                .no{
+                    display:block; 
+                    margin-bottom:toRem(6); 
+                    font-size:toRem(14); 
+                    color:#2090ff;
+                }
+            }
+            .rc_body {
+                .crd_box{
+                    display:flex; 
+                    flex-wrap:nowrap; 
+                    justify-content:space-between;
+                    .txt{
+                        position:relative;
+                        min-width: toRem(230);
+                        .ico{
+                            position:absolute; 
+                            left:0; 
+                            top:0; 
+                            display:inline-block; 
+                            width: toRem(24); 
+                            height: toRem(24); 
+                            line-height: toRem(24); 
+                            font-size: toRem(13); 
+                            text-align:center; 
+                            border-radius:50%;
+                        }
+                        .tt{
+                            display:block; 
+                            font-size: toRem(16); 
+                            color:#111; 
+                            font-weight:700;
+                        }
+                        .tx{
+                            display:block;
+                            margin-top: toRem(4);
+                            .in_txt{
+                              display:block;
+                              font-size: toRem(14); 
+                              color:#666; 
+                              line-height: toRem(22);
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                              overflow: hidden;
+                            }
+                        }
+                        .badge{
+                            margin-top: toRem(8);
+                        }
+                    }
+                    .crd{
+                        margin-left: toRem(10);
+                        display:inline-block; 
+                        width: toRem(30); 
+                        line-height: 0;
+                    }
+                }
+            }
+        }
+        &:not(:first-child){
+            margin-top: toRem(12);
+        }
+    }
+}
+
+
+
+
+

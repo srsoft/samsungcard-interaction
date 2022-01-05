@@ -1,0 +1,451 @@
+// -----------------------------------------------------------------------------
+// # form_ipt
+// * 21.11.02
+// * kimyoojin
+// -----------------------------------------------------------------------------
+
+// animation
+@keyframes input-line {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@mixin formIpLine($color: #111){
+  &::after{
+    content:'';
+    display: block;
+    background: $color;
+    position: absolute;
+    bottom: -2px;
+    left:0;
+    height: 2px;
+    animation: input-line 0.5s forwards ease-in-out;
+  }
+}
+
+
+// formBtn
+.form_dw{
+  position: relative;
+  background: #fff;
+  border: 0 solid #dcdcdc;
+  border-bottom-width: 2px;
+  width: 100%;
+  font-size: toRem(20);
+  font-weight: bold;
+  color: #111;
+  &:focus,
+  &:focus-within{
+    @include formIpLine();
+  }
+  &.is_disabled{
+    color: #dcdcdc;
+    .dw_btn{
+      cursor: default;
+      .txt_unit{
+        color: #dcdcdc;
+      }
+    }
+    .ico{
+      opacity: .5;
+    }
+  }
+  .dw_btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 55px;
+    padding: 14px 0;
+    margin-right: auto;
+    text-align: left;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: initial;
+    text-overflow: ellipsis;
+    .dw_value{
+      flex: 1 0 0;
+      display: flex;
+      align-items: center;
+      @include ellipse();
+      >.ico{
+        margin-right: 8px;
+      }
+    }
+    .txt_unit{
+      flex-shrink: 0;
+      margin-left: 12px;
+      color: #111111;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .placeholder{
+      color: #dcdcdc;
+    }
+    >.ico{
+      margin-left: 12px;
+    }
+  }
+}
+
+.form_dw.type_round{
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 0 16px;
+  .dw_btn{
+    min-height: 50px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  &:focus,
+  &:focus-within{
+    outline: -webkit-focus-ring-color auto 1px;
+    .dw_btn{
+      outline: none;
+    }
+  }
+  &:focus::after,
+  &:focus-within::after{
+    display: none;
+  }
+  &.is_disabled{
+    background: #e9e9e9;
+    color: #999;
+    .ico{
+      opacity: .5;
+    }
+  }
+}
+::placeholder{
+  color: #dcdcdc;
+}
+
+// SCinput
+.form_ipt{
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #dcdcdc;
+  width: 100%;
+  color: #111;
+  box-sizing: border-box;
+  &:focus,
+  &:focus-within{
+    @include formIpLine();
+  }
+  .ipt{
+    flex: 1;
+    border: 0 none;
+    width: 100%;
+    height: 54px;
+    padding: 14px 0;
+    font-size: toRem(20);
+    font-weight: bold;
+    color: inherit;
+    box-sizing: border-box;
+    &:focus{
+      outline: 0 none;
+    }
+  }
+  .btn_icon,
+  .btn_util{
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .txt_unit{
+    flex-shrink: 0;
+    margin-left: 12px;
+    font-size: toRem(16);
+    font-weight: bold;
+  }
+  .ipt_timer{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 12px;
+    color: #2090ff;
+    > em{
+      font-size: toRem(13);
+      font-weight: bold;
+    }
+    > svg{
+      margin-left: 4px;
+    }
+    .is_done{
+      color: #e60000;
+    }
+  }
+  &.type_del{
+    color: #dcdcdc; 
+    .auto_value { 
+      display: flex; 
+      -webkit-box-flex: 1; 
+      flex-grow: 1; 
+      font-size: toRem(20);
+      font-weight: bold;
+      line-height: toRem(54); 
+    }
+    .line_through { 
+      display: inline-block; 
+      padding-left: 6px;
+      text-decoration: line-through; 
+      font-size: toRem(16); 
+    }
+  }
+}
+.form_ipt.type_round{
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  &:focus,
+  &:focus-within{
+    outline: 2px solid #111;
+  }
+  &:focus::after,
+  &:focus-within::after{
+    display: none;
+  }
+}
+.form_wrap.is_error .form_ipt.type_round{
+  border-color: #dcdcdc;
+  color: #111;
+}
+
+.form_ipt.type_count{
+  .btn_icon{
+    margin: 0;
+    padding: 12px 0;
+  }
+  .count_txt{
+    flex: 1;
+    padding: 12px 0;
+    font-size: toRem(20);
+    text-align: center;
+  }
+}
+// color
+.form_wrap.is_pass{
+  .form_ipt{
+    border-color: #2090ff;
+    color: #2090ff;
+    &::after{
+      background-color: #2090ff;
+    }
+  }
+  .form_text{
+    color: #2090ff;
+  }
+}
+.form_wrap.is_error{
+  .form_ipt{
+    border-color: #e60000;
+    color: #e60000;
+    &::after{
+      background-color: #e60000;
+    }
+  }
+  .form_text{
+    color: #e60000;
+  }
+}
+.form_wrap.is_disabled{
+  .form_label,
+  .form_text{
+    color: #dcdcdc;;
+  }
+  .form_ipt{
+    color: #dcdcdc;
+    &::after{
+      background-color: transparent;
+    }
+  }
+  .ico{
+    opacity: .5;
+  }
+  .form_dw{
+    .dw_btn{
+      color: #dcdcdc;
+      cursor: default;
+    }
+    .dw_btn .txt_unit{
+      color: #dcdcdc
+    }
+  }
+  .form_dw.type_round{
+    background: #e9e9e9;
+    color: #999;
+  }
+}
+// SCFormWrap
+.form_wrap{
+  .form_label{
+    display: block;
+    margin-bottom: 4px;
+    font-size: toRem(14);
+    color: #666666;
+  }
+  .form_text{
+    display: block;
+    width: 100%;
+    color: #666666;
+    margin-top: 0.5rem;
+    font-size: 0.813rem;
+  }
+  .form_box{
+    display: flex;
+    align-items: center;
+    .dash,
+    .at{
+      flex-shrink: 0;
+      width: 2.25rem;
+      text-align: center;
+      line-height: 3.125rem;
+      font-size: 20px;
+      color: #dcdcdc;
+    }
+    .dash::after{
+      content: '';
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.125rem;
+      background-color: #dcdcdc;
+      vertical-align: middle;
+    }
+    >div+div{
+      margin-left: 12px;
+    }
+  }
+  .form_box+.form_box{
+    margin-top: 22px;
+  }
+}
+// form type
+
+.form_wrap.type_phone .form_box{
+  //전화번호
+  .form_dw{
+    width: 30%;
+  }
+  .form_ipt{
+    flex-basis: 66%;
+    flex-shrink: 0;
+  }
+}
+.form_wrap.type_email .form_box{
+  //이메일
+  .form_dw{
+    width: calc(50% - 18px);
+  }
+  .form_ipt{
+    flex-basis: calc(50% - 18px);
+    flex-shrink: 0;
+  }
+}
+.form_wrap.type_license .form_box{
+  //사업자등록번호
+  .form_ipt:last-of-type{
+    flex-basis: 32%;
+    flex-shrink: 0;
+  }
+}
+.form_wrap.type_drive .form_box{
+  //운전면허번호
+  .form_ipt:nth-of-type(2){
+    flex-basis: 32%;
+    flex-shrink: 0;
+  }
+}
+.form_wrap.type_money .form_box{
+  //금액 선택
+  .form_ipt{
+    flex-basis: calc(50% - 30px);
+    flex-shrink: 0;
+  }
+}
+
+.form_multi{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .form_wrap{
+    flex:1;
+    .form_ipt.type_del{
+      .auto_value{
+        color:$black;
+        font-weight: normal;
+        flex-grow: inherit;
+      }
+      .txt_unit{
+        color:$black;
+        font-weight: normal;
+        margin-left:toRem(4);
+      }
+    }
+  }
+}
+
+// 변경한도
+.form_limit{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  border-bottom: 2px solid #dcdcdc;
+  color: #111;
+  .limit_item{
+    flex: 1 0 calc(50% - 36px);
+  }
+  .ico.common-back{
+    flex-shrink: 0;
+    flex-basis: 20px;
+    transform: rotate(180deg);
+    width: 20px;
+    height: 20px;
+    margin: 0 12px 18px;
+  }
+  .limit_label{
+    font-size: toRem(14);
+    color: #666;
+  }
+  .limit_price{
+    padding: 14px 0;
+    font-size: toRem(20)
+  }
+  .limit_ipt{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    .ipt{
+      flex: 1;
+      width: 100%;
+      min-width: auto;
+      padding: 14px 0;
+      font-size: toRem(20);
+      color: inherit
+    }
+  }
+  .unit{
+    flex-shrink: 0;
+    margin-left: 4px;
+    font-size: toRem(16);
+    font-weight: inherit;
+    color: inherit;
+  }
+}
+.form_wrap.is_error .form_limit{
+  border-color: #e60000;
+  .limit_item:last-child{
+    color: #e60000;
+  }
+}
+.form_wrap.is_disabled .form_limit{
+  .limit_item:last-child,
+  .limit_item:last-child .limit_label,{
+    color: #dcdcdc;
+  }
+}

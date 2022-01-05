@@ -1,0 +1,139 @@
+// -----------------------------------------------------------------------------
+// Content layout 관련
+// -----------------------------------------------------------------------------
+.content_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container {
+  position: relative;
+  width: 100%;
+  padding-right: toRem(21) !important;
+  padding-left: toRem(21) !important;
+  padding-top: toRem(48);
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+// -----------------------------------------------------------------------------
+// common layout
+// -----------------------------------------------------------------------------
+.fixed{} // 고정할 대상 표시
+.fixed.is_fixed{
+  position: fixed;
+  top: 48px;
+  left:0;
+  right: 0;
+  background: #fff;
+  padding: 0 toRem(21);
+  z-index: 90;
+}
+
+
+// -----------------------------------------------------------------------------
+// common content gap 
+// -----------------------------------------------------------------------------
+
+
+.section {
+  position: relative;
+  padding-top: toRem(52);
+  padding-bottom: toRem(52);
+  margin-bottom: toRem(6);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: toRem(-6);
+    left: toRem(-21);
+    right: toRem(-21);
+    display: block;
+    height: toRem(6);
+    background-color: $gray6;
+  }
+  &:first-of-type {
+    padding-top: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: toRem(104);
+    &::before {
+      display: none;
+    }
+  }
+
+  .sec_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      @extend %heading;
+      font-size: $h4-font-size;
+      line-height: $line-height-base;
+      &.lg {
+        //margin-top: toRem(-21);
+        font-size: $h3-font-size;
+        line-height: $line-height-lg;
+      }
+    }
+    & + .sec_body {
+      margin-top: toRem(32);
+    }
+  }
+  .row > .col,
+  .row > [class^='col-'] {
+    &:first-of-type > div {
+      margin-top: 0;
+    }
+  }
+  // floating button 없는 경우
+  // 고하늘_퍼블 추가
+  &.floating-none {
+    padding-bottom: toRem(52);
+  }
+}
+
+.inner_section {
+  position: relative;
+  padding-top: toRem(52);
+  padding-bottom: toRem(52);
+  margin-bottom: toRem(6);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: toRem(-6);
+    left: toRem(-21);
+    right: toRem(-21);
+    display: block;
+    height: toRem(6);
+    background-color: $gray6;
+  }
+  &:first-of-type {
+    padding-top: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: toRem(0);
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.section.pd_0,
+.popup-area .pop-sec.pd_0{
+  padding:0;
+}
+.section.pd_tb_0,
+.popup-area .pop-sec.pd_tb_0 {
+  padding-top:0; 
+  padding-bottom:0;
+}
+.section.pd_t_0,
+.popup-area .pop-sec.pd_t_0 {
+  padding-top:0;
+}
+
+// N자 초과 시 ellipsis 처리
+.is_ellipse{
+  @include ellipse();
+}

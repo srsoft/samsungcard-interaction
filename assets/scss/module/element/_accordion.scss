@@ -1,0 +1,210 @@
+// -----------------------------------------------------------------------------
+// # accordion
+// * 21.11.02
+// * kimyoojin
+// -----------------------------------------------------------------------------
+.accordion{
+  &:first-child .accordion_item:first-child{
+    border-top: 0 none;
+  }
+  .accordion_collapse{
+    display: none;
+    &.show{
+      display: block;
+    }
+  }
+  .accordion_item{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $gray5;
+    background-color: $white;
+    &:first-child{
+      border-top: 1px solid $gray5;
+    }
+  }
+  .accordion_button{
+    @include font-st($fs-md, $black, $fw-b);
+    display: flex;
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    padding: toRem(24) 0;
+    background-color: $white;
+    box-shadow: none;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    &::after{
+      content: '';
+      width: toRem(20);
+      height: toRem(20);
+      margin-left: auto;
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0z'/%3E%3Cpath fill='%23000' d='M10.043 14a.674.674 0 0 1-.478-.205L3.213 7.273a.779.779 0 0 1-.022-1.045.659.659 0 0 1 .976-.022l5.876 6.032 5.79-5.942a.66.66 0 0 1 .976.023.778.778 0 0 1-.022 1.046l-6.266 6.43a.67.67 0 0 1-.478.205'/%3E%3C/g%3E%3C/svg%3E");
+      flex-shrink: 0;
+      transition: transform 0.2s ease-in-out;
+    }
+    &:not(.collapsed)::after{
+      transform: rotate(-180deg);
+    }
+  }
+  .accordion_collapse{
+    position: relative;
+    padding: toRem(24) 0;
+    border-top: 1px solid $gray5;
+    font-size: $fs-md;
+  }
+}
+.accordion.type_partical{
+  .accordion_collapse{
+    display: block;
+    padding:  8px 0;
+    .accordion_body.is_collapse{
+      display: none;
+    }
+    &.show .accordion_body.is_collapse{
+      display: block;
+    }
+  }
+  .accordion_item:first-child,
+  .accordion_body:first-child{
+    border: 0 none;
+  }
+  .accordion_button{
+    font-size: toRem(20)
+  }
+  .accordion_body{
+    border-top: 1px solid $gray5;
+    padding: 24px 0;
+    .dlist_detail .d_col:not(:first-child){
+      margin-top: toRem(18);
+    }
+  }
+}
+.accordion.detail-cont{
+  .accordion_collapse{
+    border-top: 0;
+    padding: 0;
+    &::before{
+      content:'';
+      position: absolute;
+      left: toRem(24);
+      right: toRem(24);
+      height: 1px;
+      background: $gray5;
+    }
+  }
+  .accordion_item {
+    border-radius: 0;
+    border-radius: toRem(16);
+    overflow: hidden;
+    border: 1px solid $gray5 !important;
+    & + .accordion_item{
+      margin-top:toRem(12);
+    }
+  }
+  .accordion_header{
+    .accordion_button {
+      background-color: $white;
+      box-shadow: none;
+      color: $black;
+      font-weight: 700;
+      font-size: $fn-sm;
+      padding: toRem(24);
+      &:not(.collapsed) {
+        background: $white;
+        box-shadow: none;
+        color: $black;
+      }
+    }
+    .acc-tit{
+      .badge-txt{
+        color:$gray2;
+        font-weight: normal;
+        &:after{
+          content:'';
+          display: inline-block;
+          margin:0 toRem(6);
+          width:1px;
+          height:toRem(15);
+          background-color: $gray5;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .accordion_body{
+    padding: toRem(24);
+    .dlist_detail{
+      & > div{
+        margin-top:1rem;
+        &:first-of-type{
+          margin-top:0;
+        }
+      }
+      dt{
+        font-size:toRem(14);
+      }
+      dd{
+        font-size:toRem(14);
+        font-weight:bold;
+        .txt-t3{
+          font-weight:bold;
+        }
+      }
+    }
+  }
+}
+.accordion.custom-notice {
+  .accordion_item {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $gray5;
+    background-color: $white;
+    &:first-child {
+      border-top: 1px solid $gray5;
+    }
+  }
+  .accordion_button {
+    @include font-st($fs-md, $black, $fw-b);
+    padding: toRem(24) 0;
+    background-color: $white;
+    box-shadow: none;
+  }
+  .accordion_body {
+    font-size: $fs-md;
+    padding: toRem(24) 0;
+    border-top: 1px solid $gray5;
+  }
+}
+
+.accordion.type_dlist{
+  width: 100%;
+  .accordion_item:first-child{
+    border-top: 0 none;
+    border-bottom: 0 none;
+  }
+  .accordion_collapse{
+    border-top-style: dashed;
+  }
+  .accordion_button {
+    font: inherit;
+    .dlist_hd{
+      display: flex;
+      justify-content: space-between;
+      width:100%;
+      padding-right:toRem(6);
+      > .price_area{
+        margin-left: auto;
+        font-weight: 700;
+      }
+    }
+  }
+  .d_col:not(:first-child){
+    margin-top: 15px;
+  }
+}

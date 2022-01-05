@@ -1,0 +1,540 @@
+// -----------------------------------------------------------------------------
+// private style
+// -----------------------------------------------------------------------------
+
+.bnr_card_find {
+  display: flex;
+  justify-content: space-between;
+  padding: toRem(9) 0 toRem(9) toRem(16);
+  background-color: $gray6;
+  border-radius: toRem(12);
+  .bnr_wrap {
+    padding: toRem(23) 0;
+    .bnr_tit {
+      display: block;
+      font-size: toRem(20);
+      font-weight: $fw-b;
+      line-height: normal;
+    }
+    .bnr_txt {
+      font-size: $fs-md;
+      color: $gray2;
+      line-height: 1.57;
+      margin-top: toRem(6);
+    }
+  }
+  img {
+    display: block;
+    width: toRem(120);
+    height: toRem(120);
+  }
+}
+
+.card-type {
+  &.type_2 {
+    align-items: flex-start;
+    .card-img {
+      width: toRem(20);
+      height: toRem(32);
+    }
+  }
+}
+
+.card_info_wrap {
+  .card_info_item {
+    display: flex;
+    justify-content: space-between;
+  }
+  // .card_info_txt {
+  //   .tit {
+  //     display: block;
+  //     font-size: $fs-lg;
+  //     font-weight: $fw-b;
+  //     line-height: normal;
+  //     color: $black;
+  //   }
+  //   .txt {
+  //     font-size: $fs-md;
+  //     font-weight: $fw-m;
+  //     line-height: normal;
+  //     color: $gray2;
+  //     margin-top: toRem(9);
+  //     &:first-of-type {
+  //       margin-top: toRem(6);
+  //     }
+  //     span {
+  //       position: relative;
+  //       font-size: $fs-md;
+  //       font-weight: $fw-m;
+  //       line-height: normal;
+  //       color: $gray2;
+  //       margin-right: toRem(6);
+  //       padding-right: toRem(6);
+  //       &::after {
+  //         content: "";
+  //         display: inline-block;
+  //         position: absolute;
+  //         top: 0.125rem;
+  //         right: 0;
+  //         bottom: 0;
+  //         width: 1px;
+  //         height: auto;
+  //         background-color: $gray5;
+  //       }
+  //       &:last-of-type {
+  //         &::after {
+  //           display: none;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  &.list_type {
+    li {
+      padding-top: toRem(32);
+      border-top: 1px solid $gray5;
+    }
+    li + li {
+      margin-top: toRem(27);
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+  &.list_line_type {
+    li {
+      padding: toRem(32) 0;
+      border-top: 1px solid $gray5;
+      border-bottom: 1px solid $gray5;
+      & + li {
+        border-top: none;
+      }
+      &:first-of-type {
+        border-top: 1px solid $gray5;
+      }
+    }
+    .card-type {
+      align-items: flex-start;
+    }
+  }
+  &.round_line_type {
+    padding: toRem(24) toRem(16);
+    border: 1px solid $gray5;
+    border-radius: toRem(12);
+  }
+}
+
+.card_other_wrap {
+  li {
+    margin-top: toRem(28);
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  // .card_info_item {
+  //   display: flex;
+  // }
+  // .card_info_txt {
+  //   margin-left: toRem(8);
+  //   strong {
+  //     display: block;
+  //     font-size: $fs-lg;
+  //     font-weight: $fw-b;
+  //     line-height: normal;
+  //     color: $black;
+  //   }
+  //   span {
+  //     position: relative;
+  //     font-size: $fs-md;
+  //     font-weight: $fw-m;
+  //     line-height: normal;
+  //     color: $gray2;
+  //     margin-top: toRem(6);
+  //     margin-right: toRem(6);
+  //     padding-right: toRem(6);
+  //     &::after {
+  //       content: "";
+  //       display: inline-block;
+  //       position: absolute;
+  //       top: 0.125rem;
+  //       right: 0;
+  //       bottom: 0;
+  //       width: 1px;
+  //       height: auto;
+  //       background-color: $gray5;
+  //     }
+  //     &:last-of-type {
+  //       &::after {
+  //         display: none;
+  //       }
+  //     }
+  //   }
+  //   p {
+  //     font-size: $fs-md;
+  //     font-weight: $fw-m;
+  //     line-height: normal;
+  //     color: $gray2;
+  //     margin-top: toRem(9);
+  //   }
+  // }
+}
+.dlist_wrap {
+  .dlist_detail{
+    .bank_name {
+      margin-right: toRem(6);
+    }
+  }
+  &.type_topline {
+    .dlist_detail {
+      margin-top: toRem(32);
+      padding-top: toRem(32);
+      border-top: 1px solid $gray5;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    + .type_dot.top_line{
+      margin-top: toRem(32);
+    }
+  }
+  // &.type_bothline {
+  //   padding-top: toRem(32);
+  //   border-top: 1px solid $gray5;
+  // }
+  &.type_bottomline {
+    padding: toRem(32) 0;
+    border-bottom: 1px solid $gray5;
+  }
+}
+
+.btn_hd_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner_btn {
+  > a {
+    display: block;
+    position: relative;
+    padding: toRem(16) toRem(18);
+    background-color: $gray6;
+    border-radius: toRem(16);
+  }
+  .bn_txtsub {
+    font-size: $fs-md;
+    font-weight: $fw-m;
+    line-height: normal;
+  }
+}
+
+.form_check_group {
+  &.type_6 {
+    .card-img {
+      width: toRem(30);
+      height: toRem(48);
+    }
+    &.amt-breakdown {
+      .cont-selected {
+        .dlist_wrap .dlist_detail {
+          padding-top: toRem(8);
+          dt {
+            font-size: $fs-md;
+            font-weight: $fw-m;
+            line-height: normal;
+          }
+          span {
+            display: block;
+            font-size: $fs-md;
+            font-weight: $fw-m;
+            line-height: normal;
+          }
+          .end_btn {
+            margin-top: toRem(4);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dlist_wrap .dlist_detail {
+  .txt_detail {
+    width: 100%;
+    margin-top: toRem(4);
+    span {
+      display: block;
+      font-size: toRem(14);
+      font-weight: $fw-m;
+      color: $gray2;
+      line-height: 1.57;
+    }
+  }
+}
+
+.inner-usage-detail {
+  &.type_2 {
+    .dlist_detail {
+      .tit {
+        font-size: $fs-md;
+      }
+      .txt {
+        font-size: $fs-lg;
+        font-weight: $fw-m;
+        em {
+          font-weight: $fw-b;
+        }
+      }
+      min-height: initial;
+    }
+  }
+}
+
+.btn_group_combi {
+  &.type_1 {
+    .btn_base {
+      align-items: center;
+    }
+  }
+  &.type_2 {
+    .btn_base.btn_base_ghost {
+      margin-top: 0;
+      padding-left: 0;
+      border: 0;
+      border-top: 1px solid $gray5;
+      border-radius: initial;
+      &:last-of-type {
+        border-bottom: 1px solid $gray5;
+      }
+    }
+  }
+  &.type_expand {
+    .btn_base {
+      align-items: center;
+      .inner-text {
+        .tit {
+          font-size: $fs-md;
+        }
+        .txt{
+          color: $gray2;
+        }
+      }
+    }
+  }
+  &.reserv-box {
+    .card-type {
+      .card-img {
+        width: toRem(20);
+        height: toRem(32);
+        margin-right: toRem(12);
+      }
+    }
+    .btn_group_round {
+      margin-top: toRem(24);
+    }
+    .btn_alert_box {
+      padding-top: toRem(24);
+      margin-top: toRem(24);
+      border-top: 1px solid $gray5;
+      .txt {
+        font-size: $fs-md;
+        font-weight: $fw-b;
+      }
+      & + .txt_list {
+        margin-top: toRem(12);
+      }
+    }
+    .btn_group {
+      margin-top: toRem(12);
+    }
+  }
+}
+
+.list-box {
+  .title .card-type {
+    .card-img {
+      width: toRem(20);
+      height: toRem(32);
+      margin-right: toRem(12);
+    }
+  }
+  .dlist_wrap + .btn_group {
+    margin-top: toRem(24);
+  }
+/*   .btn_group .btn_base {
+    font-weight: $fw-m;
+  } */
+}
+
+
+.title-wrap {
+  &.type1 {
+    .ic_msg_bx {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      margin-top: toRem(16);
+      .ic_bx img {
+        width: toRem(220);
+      }
+    }
+  }
+}
+
+.topline{
+  .wcms_area{
+    border-top: 1px solid $gray5;
+  }
+}
+
+.list-box{
+  .dlist_wrap{
+    .list_payment.bdr-top{
+      margin-top: toRem(16);
+      padding-top: toRem(10);
+      border-top: 1px solid $gray5;
+    }
+  }
+}
+.title-wrap.type1{
+  .tit_bx .tit{
+    & + .bracket_in{
+      font-size: $fs-md;
+      color: $gray2;
+    }
+  }
+}
+
+.detail_info2{
+  .tit_wrap .tit{
+    position: relative;
+		font-weight: $fw-b;
+		font-size: $fs-lg;
+    .ico {
+      position: absolute;
+      top: -2px;
+      left: -32px;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+.accordion.detail-cont .accordion_header {
+  .accordion_button {
+    .acc_tit{
+			.acc_txt{	
+				margin-top: toRem(6);
+				font-size: $fs-md;
+				font-weight: $fw-m;
+				color: $gray2;
+			}
+		}
+  }
+}
+
+.detail_info_wrap {
+  .list_detail{
+    li {
+      padding: toRem(14) 0;
+      &:first-of-type {
+        padding-top: 0;
+      }
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+    &.bdr-top{
+      padding-top: toRem(32);
+      border-top: 1px solid $gray5;
+    }
+  }
+}
+
+.card_type_wrap{
+  &.type_bdr{
+    padding: toRem(24) toRem(16);
+    border: 1px solid $gray5;
+    border-radius: toRem(12);
+  }
+}
+.acc_txt_wrap{
+  margin-top:toRem(7);
+  font-size:toRem(14);
+  font-weight: $fw-m;
+  color:$gray2;
+  .acc_tx{
+    > span{
+      + span{
+        &::before{
+          content:'';
+          display:inline-block;
+          width:1px;
+          height:toRem(14);
+          background-color: $gray5;
+          margin:0 toRem(6) 0 toRem(3);
+          vertical-align: middle;
+        }
+      }
+    }
+    + .acc_tx{
+      margin-top:toRem(6);
+    }
+  }
+  > p{
+    margin-top: toRem(7);
+    &:first-of-type{
+      margin-top: toRem(16);
+    }
+  }
+}
+
+// .page_title {
+//   [class*="btn_base"]{
+//     font-weight: $fw-m;
+//   }
+// }
+
+.list-box{
+  .list_payment.topline{
+    margin-top: toRem(16);
+    padding-top: toRem(24);
+    border-top: 1px solid $gray5;
+  }
+  li {
+    padding-top: toRem(24);
+    .detail_info2 {
+      padding: 0;
+      padding-left: toRem(32);
+    }
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+}
+
+
+.tbl_info{
+  th, td{
+    vertical-align: middle;
+  }
+}
+
+.pop-body{
+  .pop-sec {
+    > p + p{
+      margin-top : toRem(8);
+    }
+  }
+}
+
+.banner_btn{
+  .bnr_img{
+    position: absolute;
+    bottom: 50%;
+    right: toRem(18);
+    margin-bottom: toRem(-12);
+    width: toRem(24);
+    height: toRem(24);
+  }
+}

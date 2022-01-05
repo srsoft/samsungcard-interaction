@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// Modal
+// -----------------------------------------------------------------------------
+
+.modal-dialog {
+  align-items: center;
+  &.bottom-to-center {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    .modal-content {
+      padding: toRem(31) toRem(21);
+      border: none;
+      border-radius: toRem(21) toRem(21) 0 0;
+    }
+    .modal-header {
+      padding: 0 0 toRem(16);
+      border-bottom: none;
+    }
+    .modal-body {
+      padding: 0;
+    }
+  }
+  .btn-group-cta {
+    .btn {
+      @extend %btn-font-style2;
+      min-height: 42px;
+    }
+  }
+}
+.cont-selected {
+  .row > .col,
+  .row > [class^='col-'] {
+    background: $white;
+  }
+}
+
+.bank {
+  padding: 0;
+}

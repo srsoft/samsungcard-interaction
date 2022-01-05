@@ -1,0 +1,95 @@
+// -----------------------------------------------------------------------------
+// Header of the site/application
+// -----------------------------------------------------------------------------
+.header {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: var(--primary-text-color);
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+// App (header header-app)
+.header-app {
+  display: flex;
+  align-items: center;
+  color: var(--primary-text-color);
+  height: toRem(48);
+  background-color: $white;
+  + #content {
+    padding-top: toRem(48);
+  }
+  .nav-item {
+    .nav-link {
+      display: flex;
+      align-items: center;
+      font-size: toRem(14);
+      padding: 0;
+      .ico {
+        margin: 0 toRem(6) 0 0;
+        padding: toRem(8) toRem(5);
+      }
+    }
+  }
+  a {
+    color: $black;
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+// page-header
+.page-hd-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: toRem(14) toRem(21);
+  background-color: $white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  .page-tit {
+    .ico {
+      position: relative;
+      top: toRem(-2);
+      margin-right: toRem(6);
+    }
+    > a {
+      display: block;
+      padding: 0 0;
+      color: #666666;
+      text-decoration: none;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      span {
+        color: $black;
+        font-size: $fs-md;
+        font-weight: $fw-m;
+        font-style: normal;
+      }
+    }
+  }
+  .page-unit {
+    .ico,
+    > a {
+      position: relative;
+      top: -0.063rem;
+    }
+  }
+}
+
+.pagelabel {
+  display: flex;
+  justify-content: space-between;
+}

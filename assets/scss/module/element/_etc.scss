@@ -1,0 +1,32 @@
+.inner-ico-select {
+  &.type1 {
+    width: 100%;
+    flex-wrap: wrap;
+    .ico_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      & + .ico_wrap {
+        margin-top: toRem(24);
+        padding-top: toRem(24);
+        border-top: 1px solid $gray5;
+      }
+    }
+    .ico_box {
+      flex-basis: 33.33%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .ico {
+        margin: 0;
+        & + .tit {
+          padding-top: toRem(8);
+        }
+      }
+      .tit {
+        font-size: toRem(14);
+        line-height: toRem(22);
+      }
+    }
+  }
+}

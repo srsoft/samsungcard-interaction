@@ -1,0 +1,454 @@
+@charset "UTF-8";
+/**********************************************************
+/* 퍼블리싱 가이드를 위한 css 입니다.
+/* 실제 작업과는 관련이 없습니다.
+/***********************************************************/
+
+html,
+body {
+  height: 100%;
+  background-color: #ffffff;
+  font-family: -apple-system, "NotoKR", system-ui;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+html *,
+body * {
+  -webkit-transition: background-color ease-in-out 500ms;
+  transition: background-color ease-in-out 500ms;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+html a,
+body a {
+  color: inherit;
+}
+
+html a:hover, html a:focus, html a:active,
+body a:hover,
+body a:focus,
+body a:active {
+  color: var(--secondary-color);
+}
+
+html img,
+body img {
+  max-width: 100%;
+}
+
+.content_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container {
+  width: 100%;
+  padding-right: 1.3125rem !important;
+  padding-left: 1.3125rem !important;
+  padding-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+em {
+  font-style: normal;
+}
+
+/* text-align class */
+.text-start {
+  text-align: left !important;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* grid class */
+.row,
+.row > * {
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+}
+
+.col-12 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 auto;
+          flex: 0 auto;
+  width: 100%;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.d-grid {
+  display: -ms-grid !important;
+  display: grid !important;
+}
+
+[class^='row-cols'] {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row-cols-1 > * {
+  width: calc(100% / 1) !important;
+}
+
+.row-cols-2 > * {
+  width: calc(100% / 2) !important;
+}
+
+.row-cols-3 > * {
+  width: calc(100% / 3) !important;
+}
+
+.row-cols-4 > * {
+  width: calc(100% / 4) !important;
+}
+
+.row-cols-auto > * {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 0 auto !important;
+          flex: 0 0 auto !important;
+  width: auto;
+}
+
+/* module margin top class */
+.mg-1 {
+  margin-top: 0.375rem;
+}
+
+.mg-2 {
+  margin-top: 0.75rem;
+}
+
+.mg-3 {
+  margin-top: 1rem;
+}
+
+.mg-4 {
+  margin-top: 1.5rem;
+}
+
+.mg-5 {
+  margin-top: 2rem;
+}
+
+.mg-6 {
+  margin-top: 2.625rem;
+}
+
+.mg-7 {
+  margin-top: 3.25rem;
+}
+
+.mg-8 {
+  margin-top: 4rem;
+}
+
+.g-empty-box {
+  color: #111111;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 5.625rem;
+  padding: 1rem;
+  background-color: #ececec;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.visual-hidden,
+.visual-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.float-end {
+  float: right !important;
+}
+
+.h0, h1,
+.h1, h2,
+.h2, h3,
+.h3, h4,
+.h4, h5,
+.h5, h6,
+.h6 {
+  margin: 0;
+  padding: 0;
+  color: #111111;
+  font-weight: 700;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+.h0 {
+  font-size: 2.25rem;
+}
+
+h1,
+.h1 {
+  font-size: 2rem;
+}
+
+h2,
+.h2 {
+  font-size: 1.5rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h4,
+.h4 {
+  font-size: 1.25rem;
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+}
+
+h6,
+.h6 {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.txt-t1, .txt-t2, .txt-t3, .txt-t4, .txt-t5 {
+  color: #111111;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.txt-t1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.txt-t2 {
+  font-size: 1rem;
+}
+
+.txt-t3 {
+  font-size: 0.875rem;
+}
+
+.txt-t4 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.txt-t5 {
+  font-size: 0.8125rem;
+}
+
+.txt-wb {
+  font-weight: 700;
+}
+
+.txt-wm {
+  font-weight: 500;
+}
+
+.txt-wr {
+  font-weight: 400;
+}
+
+.number-t1, .number-t2, .number-t3, .number-t4, .price-amount {
+  color: #111111;
+  font-family: "Lato", -apple-system, "NotoKR", system-ui;
+  font-weight: 700;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.number-t1 {
+  font-size: 3rem;
+}
+
+.number-t2 {
+  font-size: 2rem;
+}
+
+.number-t3 {
+  font-size: 1rem;
+}
+
+.number-t4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.price-amount .price {
+  font-size: 1em;
+  font-style: normal;
+}
+
+.price-amount.large .price {
+  font-size: 1.3333em;
+}
+
+.price-amount.xlarge .price {
+  font-size: 1.75em;
+}
+
+.font-color {
+  color: #0080ff;
+}
+
+.guide-content {
+  padding: 0 1.3125rem;
+  background-color: #f4f6fb;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+.guide-content section {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.guide-content section .g-tit {
+  color: #bbb;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+.guide-content section .g-stit {
+  color: #111111;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.guide-content section .g-xstit {
+  color: #888;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-style: normal;
+  margin: 20px 0 12px;
+}
+
+.guide-content section .box {
+  margin-bottom: 30px;
+}
+
+.guide-content section .box.gtit-line {
+  padding-top: 2.0625rem;
+  border-top: 1px solid #111;
+}
+
+.guide-content .row > .col,
+.guide-content .row > [class^='col='] {
+  background-color: transparent;
+}
+
+.guide-content .table.guide th {
+  background-color: #f4f6fb;
+  text-align: center;
+  font-size: 0.8125rem;
+}
+
+.guide-content .table.guide td {
+  vertical-align: top;
+}
+
+.guide-content .table.guide th,
+.guide-content .table.guide td {
+  padding: 0.625rem;
+}
